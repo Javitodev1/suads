@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+const Aspects = {}
+
+type Aspect = keyof typeof Aspects
+
+interface Props extends HTMLAttributes<'img'> {
+  aspect: Aspect
+  class: string
+}
+
+const { class: className, src, alt, aspect } = Astro.props
+const classes = [className, aspect]
+---
+
+<picture class:list={classes}>
+  <slot />
+  <img
+    src={src}
+    alt={alt}
+  />
+</picture>

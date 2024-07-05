@@ -1,0 +1,43 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { BaseCard, LinkButton } from '@/components'
+import { getShadow } from '@/components/utils'
+import type { BaseCardVariant, BaseCardShape } from '@/components/types'
+
+interface Props extends HTMLAttributes<'a'> {
+  variant: BaseCardVariant
+  shape: BaseCardShape
+  class?: string
+}
+
+const { variant, shape, href, target, class: className } = Astro.props
+const shadow =
+  variant === 'transparent_dark' || variant === 'transparent_light'
+    ? ''
+    : getShadow('card')
+const classes = [className, shadow]
+---
+
+<BaseCard
+  variant={variant}
+  shape={shape}
+  class:list={classes}
+  class='rounded-xl'>
+  <slot
+    name='header'
+    slot='header'>
+    No slot header
+  </slot>
+  <slot
+    name='body'
+    slot='body'>
+    No slot body
+  </slot>
+  <LinkButton
+    href={href}
+    target={target}
+    gradient={'accent_1'}
+    class='mt-12'
+    slot='before'
+  ><slot name="cta">No slot cta</slot></LinkButton>
+</BaseCard>

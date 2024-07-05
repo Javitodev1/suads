@@ -1,0 +1,58 @@
+---
+import {
+  BgVideoContainer,
+  BaseContainer,
+  BaseText,
+  LinkButton,
+} from '@/components'
+
+interface Props {
+  src: string
+}
+
+const { src } = Astro.props
+---
+
+<BgVideoContainer src={src}>
+  <BaseContainer variant={'hero'} class='h-full flex items-center'>
+    <div class='max-w-md space-y-12'>
+      <BaseText
+        variant={'hero'}
+        theme={'light'}>
+        <slot
+          name='header'
+          slot='header'>
+          No module slot hero-header
+        </slot>
+        <slot
+          name='body'
+          slot='body'>
+          No module slot hero-body
+        </slot>
+      </BaseText>
+
+      <LinkButton gradient={'accent_1'}>
+        <slot name='cta'> No module slot hero-cta </slot>
+      </LinkButton>
+    </div>
+  </BaseContainer>
+</BgVideoContainer>
+
+<!-- Slots Example for Layouts -->
+<!-- 
+    <slot
+      name='hero-header'
+      slot='header'>
+      No layout slot hero-header
+    </slot>
+    <slot
+      name='hero-body'
+      slot='body'>
+      No layout slot hero-body
+    </slot>
+    <slot
+      name='hero-cta'
+      slot='cta'>
+      No layout slot hero-cta
+    </slot>
+-->

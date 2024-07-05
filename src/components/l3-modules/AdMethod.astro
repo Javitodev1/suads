@@ -1,0 +1,208 @@
+---
+import {
+  BaseContainer,
+  BaseText,
+  BorderText,
+  Separator,
+  LinkButton,
+} from '@/components'
+---
+
+<Separator variant={'up_top'} />
+<section class='bg-neutral-dark'>
+  <BaseContainer
+    variant={'section'}
+    class='space-y-12'>
+    <BaseText
+      variant={'section'}
+      theme={'light'}
+      class='max-w-3xl'>
+      <slot
+        name='header'
+        slot='header'
+        >No module slot header</slot
+      >
+      <slot
+        name='body'
+        slot='body'
+        >No module slot body</slot
+      >
+    </BaseText>
+
+    <div class='grid grid-cols-3 grid-rows-2 gap-y-[2px]'>
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'left'}
+        style={'dotted'}
+        borderColor={'neutral_white'}>
+        <slot
+          name='card-header-1'
+          slot='header'
+          >No module slot card-header-1</slot
+        >
+        <slot
+          name='card-body-1'
+          slot='body'
+          >No module slot card-body-1</slot
+        >
+      </BorderText>
+
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'left'}
+        style={'dotted'}
+        borderColor={'neutral_white'}>
+        <slot
+          name='card-header-2'
+          slot='header'
+          >No module slot card-header-2</slot
+        >
+        <slot
+          name='card-body-2'
+          slot='body'
+          >No module slot card-body-2</slot
+        >
+      </BorderText>
+
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'both'}
+        style={'dotted'}
+        borderColor={'neutral_white'}>
+        <slot
+          name='card-header-3'
+          slot='header'
+          >No module slot card-header-3</slot
+        >
+        <slot
+          name='card-body-3'
+          slot='body'
+          >No module slot card-body-3</slot
+        >
+      </BorderText>
+
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'left'}
+        style={'dotted'}
+        borderColor={'neutral_white'}>
+        <slot
+          name='card-header-4'
+          slot='header'
+          >No module slot card-header-4</slot
+        >
+        <slot
+          name='card-body-4'
+          slot='body'
+          >No module slot card-body-4</slot
+        >
+      </BorderText>
+
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'left'}
+        style={'dotted'}
+        borderColor={'neutral_white'}>
+        <slot
+          name='card-header-5'
+          slot='header'
+          >No module slot card-header-5</slot
+        >
+        <slot
+          name='card-body-5'
+          slot='body'
+          >No module slot card-body-5</slot
+        >
+      </BorderText>
+
+      <BorderText
+        variant={'sidecard'}
+        theme={'light'}
+        side={'both'}
+        style={'dotted'}
+        borderColor={'neutral_white'}
+        ><Fragment slot='header'></Fragment>
+        <Fragment slot='body'></Fragment>
+      </BorderText>
+    </div>
+
+    <LinkButton gradient={'accent_1'}>
+      <slot name='cta'>No module slot cta</slot>
+    </LinkButton>
+  </BaseContainer>
+</section>
+<Separator variant={'up_bottom'} />
+
+<!-- Slots -->
+<!-- 
+    <slot
+      name='ad-method-header'
+      slot='header'>
+      No layout slot ad-method-header
+    </slot>
+    <slot
+      name='ad-method-body'
+      slot='body'>
+      No layout slot ad-method-body
+    </slot>
+    <slot
+      name='ad-method-card-header-1'
+      slot='card-header-1'>
+      No layout slot ad-method-card-header-1
+    </slot>
+    <slot
+      name='ad-method-card-body-1'
+      slot='card-body-1'>
+      No layout slot ad-method-card-body-1
+    </slot>
+    <slot
+      name='ad-method-card-header-2'
+      slot='card-header-2'>
+      No layout slot ad-method-card-header-2
+    </slot>
+    <slot
+      name='ad-method-card-body-2'
+      slot='card-body-2'>
+      No layout slot ad-method-card-body-2
+    </slot>
+    <slot
+      name='ad-method-card-header-3'
+      slot='card-header-3'>
+      No layout slot ad-method-card-header-3
+    </slot>
+    <slot
+      name='ad-method-card-body-3'
+      slot='card-body-3'>
+      No layout slot ad-method-card-body-3
+    </slot>
+    <slot
+      name='ad-method-card-header-4'
+      slot='card-header-4'>
+      No layout slot ad-method-card-header-4
+    </slot>
+    <slot
+      name='ad-method-card-body-4'
+      slot='card-body-4'>
+      No layout slot ad-method-card-body-4
+    </slot>
+    <slot
+      name='ad-method-card-header-5'
+      slot='card-header-5'>
+      No layout slot ad-method-card-header-5
+    </slot>
+    <slot
+      name='ad-method-card-body-5'
+      slot='card-body-5'>
+      No layout slot ad-method-card-body-5
+    </slot>
+    <slot
+      name='ad-method-cta'
+      slot='cta'>
+      No layout slot ad-method-cta
+    </slot>
+-->

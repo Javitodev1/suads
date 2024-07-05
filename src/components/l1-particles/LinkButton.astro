@@ -1,0 +1,32 @@
+---
+import { Typography, GradientContainer } from '@/components'
+import { getShadow } from '@/components/utils'
+import type { Gradient } from '@/components/types'
+import type { HTMLAttributes } from 'astro/types'
+import ArrowIcon from '@astropub/icons/ChevronRight'
+
+interface Props extends HTMLAttributes<'a'> {
+  gradient: Gradient
+  class?: string
+}
+
+const { gradient, href, target, class: className } = Astro.props
+const classes = [className, getShadow('card')]
+---
+
+<Typography
+  as='a'
+  variant={'cta'}
+  color={'neutral_dark'}
+  href={href}
+  target={target}
+  class:list={classes}
+  class='cursor-pointer block w-fit rounded-full overflow-hidden active:translate-y-1'>
+  <GradientContainer
+    variant={'button'}
+    gradient={gradient}
+    class='hover:text-white hover:from-picton-blue hover:to-picton-blue-400 transition-colors duration-150'>
+    <slot>Solicita tu cotización</slot>
+    <ArrowIcon size={24} />
+  </GradientContainer>
+</Typography>

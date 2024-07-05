@@ -1,0 +1,40 @@
+---
+const Variants = {
+  up_top: 'mask-up',
+  up_bottom: 'mask-up rotate-180',
+  down_top: 'mask-down',
+  down_bottom: 'mask-down rotate-180',
+}
+
+type Variant = keyof typeof Variants
+
+export type { Variant as SeparatorVariant }
+
+interface Props {
+  variant: Variant
+  class?: string
+}
+
+const { variant, class: container = 'h-20' } = Astro.props
+
+const classes = [Variants[variant]]
+---
+
+<style>
+  .mask-up {
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+  }
+
+  .mask-down {
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+</style>
+
+<div
+  class='relative w-full bg-neutral-dark'
+  class:list={container}>
+  <div
+    class='size-full bg-neutral-white'
+    class:list={classes}>
+  </div>
+</div>

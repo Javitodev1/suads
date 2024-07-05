@@ -1,0 +1,24 @@
+---
+const Variants = {
+  hero: 'p-12',
+  section: 'p-12 mx-auto max-w-6xl min-h-screen',
+  card: 'p-6',
+  button: 'py-1 flex px-4 items-center',
+}
+
+type Variant = keyof typeof Variants
+export type { Variant as BaseContainerVariant }
+
+interface Props {
+  variant: Variant
+  class?: string
+  children: any
+}
+
+const { variant, class: className } = Astro.props
+const classes = [className, Variants[variant]]
+---
+
+<div class:list={classes}>
+  <slot />
+</div>
