@@ -17,6 +17,7 @@ import type {
   BorderTextSide,
   BorderTextStyle,
 } from '@/components/l1-particles/BorderText.astro'
+import type { Link } from '@/components/l1-particles/Navbar.astro'
 
 // l2-composites
 import type {
@@ -30,6 +31,7 @@ export type {
   Color,
   Gradient,
   Shadow,
+  Link,
   TypographyVariant,
   BaseContainerVariant,
   SeparatorVariant,

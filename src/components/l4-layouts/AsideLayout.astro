@@ -17,13 +17,13 @@ const { title } = Astro.props
   </head>
   <body>
     <div class='grid grid-cols-12'>
-      <aside class='col-span-2 relative'>
+      <aside class='col-span-2 relative min-w-40'>
         <div class='sticky h-screen w-full top-0 left-0 p-6 bg-neutral-700'>
-          <!-- header -->
+          <slot name='header' />
         </div>
       </aside>
       <main class='col-span-10'>
-        <slot />
+        <slot name='main' />
       </main>
     </div>
   </body>

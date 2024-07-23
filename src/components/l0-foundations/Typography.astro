@@ -28,14 +28,25 @@ type Props<Tag extends HTMLTag> = Polymorphic<{
   class?: string
 }>
 
-const { as: Tag, class: className, variant, color, ...props } = Astro.props
+const {
+  as: Tag,
+  class: className,
+  variant,
+  color,
+  ...props
+} = Astro.props as {
+  as: HTMLTag
+  variant: Variant
+  color: Color
+  class: String
+}
 const strongCss = '[&_strong]:text-accent-title'
 
 const classes = [
   strongCss,
   className,
   FontFamily,
-  Variants[variant as Variant],
+  Variants[variant],
   getTextColor(color),
 ]
 ---

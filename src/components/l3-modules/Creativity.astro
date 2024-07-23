@@ -1,8 +1,20 @@
 ---
-import { IconCard, BaseText, BaseContainer, PlaceholderIcon } from '@/components'
+import {
+  IconCard,
+  BaseText,
+  BaseContainer,
+  PlaceholderIcon,
+} from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
 ---
 
 <BaseContainer
+  id={id}
   variant={'section'}
   class='flex flex-col justify-between'>
   <BaseText
@@ -24,7 +36,9 @@ import { IconCard, BaseText, BaseContainer, PlaceholderIcon } from '@/components
     <IconCard
       variant={'dark'}
       shape={'fit'}>
-      <slot name="card-icon-1" slot="icon">
+      <slot
+        name='card-icon-1'
+        slot='icon'>
         <PlaceholderIcon variant={'dark'} />
       </slot>
       <slot
@@ -42,7 +56,9 @@ import { IconCard, BaseText, BaseContainer, PlaceholderIcon } from '@/components
     <IconCard
       variant={'dark'}
       shape={'fit'}>
-      <slot name="card-icon-2" slot="icon">
+      <slot
+        name='card-icon-2'
+        slot='icon'>
         <PlaceholderIcon variant={'dark'} />
       </slot>
       <slot
@@ -60,7 +76,9 @@ import { IconCard, BaseText, BaseContainer, PlaceholderIcon } from '@/components
     <IconCard
       variant={'dark'}
       shape={'fit'}>
-      <slot name="card-icon-3" slot="icon">
+      <slot
+        name='card-icon-3'
+        slot='icon'>
         <PlaceholderIcon variant={'dark'} />
       </slot>
       <slot
@@ -76,62 +94,3 @@ import { IconCard, BaseText, BaseContainer, PlaceholderIcon } from '@/components
     </IconCard>
   </div>
 </BaseContainer>
-
-<!-- Slots -->
-<!-- 
-    <slot
-      name='creativity-header'
-      slot='header'>
-      No layout slot creativity-header
-    </slot>
-    <slot
-      name='creativity-body'
-      slot='body'>
-      No layout slot creativity-body
-    </slot>
-    <slot
-      name='creativity-card-icon-1'
-      slot='card-icon-1'>
-      <PlaceholderIcon variant={'dark'} />
-    </slot>
-    <slot
-      name='creativity-card-header-1'
-      slot='card-header-1'>
-      No layout slot creativity-card-header- 1
-    </slot>
-    <slot
-      name='creativity-card-body-1'
-      slot='card-body-1'>
-      No layout slot creativity-card-body- 1
-    </slot>
-    <slot
-      name='creativity-card-icon-2'
-      slot='card-icon-2'>
-      <PlaceholderIcon variant={'dark'} />
-    </slot>
-    <slot
-      name='creativity-card-header-2'
-      slot='card-header-2'>
-      No layout slot creativity-card-header- 2
-    </slot>
-    <slot
-      name='creativity-card-body-2'
-      slot='card-body-2'>
-      No layout slot creativity-card-body- 2
-    </slot>
-    <slot
-      name='creativity-card-icon-3'
-      slot='card-icon-3'>
-      <PlaceholderIcon variant={'dark'} />
-    </slot>
-    <slot
-      name='creativity-card-header-3'
-      slot='card-header-3'>
-      No layout slot creativity-card-header- 3
-    </slot>
-    <slot
-      name='creativity-card-body-3'
-      slot='card-body-3'>
-      No layout slot creativity-card-body- 3
-    </slot>
--->

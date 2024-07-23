@@ -6,15 +6,29 @@ import {
   LinkButton,
 } from '@/components'
 
-interface Props {
-  src: string
+const Variants = {
+  ['left']: 'flex-row',
+  ['right']: 'flex-row-reverse',
 }
 
-const { src } = Astro.props
+export type Variant = keyof typeof Variants
+
+interface Props {
+  src: string
+  id?: string
+  variant?: Variant
+}
+
+const { src, id, variant = 'left' } = Astro.props
+const classes = [Variants[variant]]
 ---
 
 <BgVideoContainer src={src}>
-  <BaseContainer variant={'hero'} class='h-full flex items-center'>
+  <BaseContainer
+    id={id}
+    variant={'hero'}
+    class='h-full flex items-center'
+    class:list={classes}>
     <div class='max-w-md space-y-12'>
       <BaseText
         variant={'hero'}
@@ -37,22 +51,3 @@ const { src } = Astro.props
     </div>
   </BaseContainer>
 </BgVideoContainer>
-
-<!-- Slots Example for Layouts -->
-<!-- 
-    <slot
-      name='hero-header'
-      slot='header'>
-      No layout slot hero-header
-    </slot>
-    <slot
-      name='hero-body'
-      slot='body'>
-      No layout slot hero-body
-    </slot>
-    <slot
-      name='hero-cta'
-      slot='cta'>
-      No layout slot hero-cta
-    </slot>
--->

@@ -8,23 +8,21 @@ interface Props {
 const { src } = Astro.props
 ---
 
-<section class='relative overflow-hidden'>
-  <div class='size-full'>
-    <video
-      autoplay
-      muted
-      loop
-      preload='auto'
-      class='min-w-full min-h-full'>
-      <source
-        src={src}
-        type={'video/mp4'}
-      />
-      Tu navegador no admite el elemento <code>video</code>.
-    </video>
-  </div>
+<section class='h-screen relative'>
+  <video
+    autoplay
+    muted
+    loop
+    preload='auto'
+    class='size-full object-center object-cover col-start-1 row-start-1'>
+    <source
+      src={src}
+      type={'video/mp4'}
+    />
+    Tu navegador no admite el elemento <code>video</code>.
+  </video>
 
-  <div class='absolute top-0 left-0 size-full'>
+  <div class='col-start-1 row-start-1 absolute top-0 left-0 size-full'>
     <slot />
   </div>
 </section>

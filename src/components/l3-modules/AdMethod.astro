@@ -6,11 +6,18 @@ import {
   Separator,
   LinkButton,
 } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
 ---
 
 <Separator variant={'up_top'} />
 <section class='bg-neutral-dark'>
   <BaseContainer
+    id={id}
     variant={'section'}
     class='space-y-12'>
     <BaseText
@@ -137,72 +144,3 @@ import {
   </BaseContainer>
 </section>
 <Separator variant={'up_bottom'} />
-
-<!-- Slots -->
-<!-- 
-    <slot
-      name='ad-method-header'
-      slot='header'>
-      No layout slot ad-method-header
-    </slot>
-    <slot
-      name='ad-method-body'
-      slot='body'>
-      No layout slot ad-method-body
-    </slot>
-    <slot
-      name='ad-method-card-header-1'
-      slot='card-header-1'>
-      No layout slot ad-method-card-header-1
-    </slot>
-    <slot
-      name='ad-method-card-body-1'
-      slot='card-body-1'>
-      No layout slot ad-method-card-body-1
-    </slot>
-    <slot
-      name='ad-method-card-header-2'
-      slot='card-header-2'>
-      No layout slot ad-method-card-header-2
-    </slot>
-    <slot
-      name='ad-method-card-body-2'
-      slot='card-body-2'>
-      No layout slot ad-method-card-body-2
-    </slot>
-    <slot
-      name='ad-method-card-header-3'
-      slot='card-header-3'>
-      No layout slot ad-method-card-header-3
-    </slot>
-    <slot
-      name='ad-method-card-body-3'
-      slot='card-body-3'>
-      No layout slot ad-method-card-body-3
-    </slot>
-    <slot
-      name='ad-method-card-header-4'
-      slot='card-header-4'>
-      No layout slot ad-method-card-header-4
-    </slot>
-    <slot
-      name='ad-method-card-body-4'
-      slot='card-body-4'>
-      No layout slot ad-method-card-body-4
-    </slot>
-    <slot
-      name='ad-method-card-header-5'
-      slot='card-header-5'>
-      No layout slot ad-method-card-header-5
-    </slot>
-    <slot
-      name='ad-method-card-body-5'
-      slot='card-body-5'>
-      No layout slot ad-method-card-body-5
-    </slot>
-    <slot
-      name='ad-method-cta'
-      slot='cta'>
-      No layout slot ad-method-cta
-    </slot>
--->

@@ -1,0 +1,41 @@
+---
+const defaultSrc = '/images/No-Image-Placeholder.svg'
+
+interface Props {
+  src?: string
+  alt?: string
+  large?: string
+  medium?: string
+  isLazy?: boolean
+  class?: string
+}
+
+const {
+  src = defaultSrc,
+  alt = 'No alt',
+  large = src,
+  medium = src,
+  isLazy = true,
+  class: className,
+  ...props
+} = Astro.props
+
+const loading = isLazy ? 'lazy' : 'eager'
+---
+
+<picture class:list={className}>
+  <source
+    srcset={large}
+    media='(min-width: 1200px)'
+  />
+  <source
+    srcset={medium}
+    media='(min-width: 768px)'
+  />
+  <img
+    src={src}
+    alt={alt}
+    loading={loading}
+    {...props}
+  />
+</picture>

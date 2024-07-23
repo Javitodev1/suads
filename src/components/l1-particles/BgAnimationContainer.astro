@@ -1,0 +1,41 @@
+---
+
+---
+
+<section class='w-full h-screen'>
+  <canvas
+    id='canva'
+    class='size-full'
+  ></canvas>
+  <!-- <div class='absolute top-0 left-0 size-full'>
+    <slot />
+  </div> -->
+</section>
+
+<script
+  is:inline
+  src='/scripts/three.r134.min.js'
+></script>
+<script
+  is:inline
+  src='/scripts/vanta.birds.min.js'
+></script>
+<script is:inline>
+  window.addEventListener('load', () =>
+    VANTA.BIRDS({
+      el: '#canva',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: 0x063a5b,
+      color1: 0x38b6ff,
+      color2: 0x063a5b,
+      speedLimit: 10.0,
+      separation: 30.0,
+    })
+  )
+</script>

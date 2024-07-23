@@ -1,8 +1,16 @@
 ---
 import { Typography, BorderText, BaseContainer, LinkButton } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
 ---
 
-<BaseContainer variant={'section'}>
+<BaseContainer
+  variant={'section'}
+  id={id}>
   <Typography
     as={'h2'}
     variant={'title'}
@@ -67,53 +75,11 @@ import { Typography, BorderText, BaseContainer, LinkButton } from '@/components'
         </slot>
       </BorderText>
 
-      <LinkButton gradient={'accent_1'} class='ml-6'>
+      <LinkButton
+        gradient={'accent_1'}
+        class='ml-6'>
         <slot name='cta'>No module slot cta</slot>
       </LinkButton>
     </div>
   </div>
 </BaseContainer>
-
-<!-- Slots -->
-<!-- 
-    <slot
-      name='ad-production-header'
-      slot='header'>
-      No layout slot ad-production-header
-    </slot>
-    <slot
-      name='ad-production-card-header-1'
-      slot='card-header-1'>
-      No layout slot ad-production-card-header-1
-    </slot>
-    <slot
-      name='ad-production-card-body-1'
-      slot='card-body-1'>
-      No layout slot ad-production-card-body-1
-    </slot>
-    <slot
-      name='ad-production-card-header-2'
-      slot='card-header-2'>
-      No layout slot ad-production-card-header-2
-    </slot>
-    <slot
-      name='ad-production-card-body-2'
-      slot='card-body-2'>
-      No layout slot ad-production-card-body-2
-    </slot>
-    <slot
-      name='ad-production-card-header-3'
-      slot='card-header-3'>
-      No layout slot ad-production-card-header-3
-    </slot>
-    <slot
-      name='ad-production-card-body-3'
-      slot='card-body-3'>
-      No layout slot ad-production-card-body-3
-    </slot>
-    <slot
-      name='ad-production-body'
-      slot='cta'>
-      No layout slot ad-production-body
-    </slot>
--->

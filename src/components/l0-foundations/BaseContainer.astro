@@ -12,13 +12,16 @@ export type { Variant as BaseContainerVariant }
 interface Props {
   variant: Variant
   class?: string
+  id?: string
   children: any
 }
 
-const { variant, class: className } = Astro.props
+const { variant, class: className, id = null } = Astro.props
 const classes = [className, Variants[variant]]
 ---
 
-<div class:list={classes}>
+<div
+  class:list={classes}
+  id={id}>
   <slot />
 </div>

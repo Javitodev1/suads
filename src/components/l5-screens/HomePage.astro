@@ -1,13 +1,31 @@
 ---
 import { HomeLayout } from '@/components'
 
-const seoTitle = ''
-const heroVideoSrc = '/videos/loop-fire.mp4'
+const seoTitle =
+  'Agencia Suads | Publicidad, Desarrollo Web y Marketing Digital'
+const heroVideoSrc = '/videos/loop-mist.mp4'
+const brand = {
+  imagesSrc: [],
+  altSrc: [],
+}
+const links = [
+  {
+    href: '/',
+    label: 'Inicio',
+  },
+  {
+    href: '/#services',
+    label: 'Servicios',
+  },
+]
 ---
 
 <HomeLayout
   title={seoTitle}
-  heroVideoSrc={heroVideoSrc}>
+  heroVideoSrc={heroVideoSrc}
+  brandImageSrc={brand.imagesSrc}
+  brandImageAlt={brand.altSrc}
+  links={links}>
   <!-- Hero -->
   <Fragment slot={'hero-header'}>
     Transformamos ideas creativas en <strong>campañas exitosas</strong>
@@ -19,6 +37,16 @@ const heroVideoSrc = '/videos/loop-fire.mp4'
     resultados excepcionales.
   </Fragment>
   <Fragment slot={'hero-cta'}> Solicita tu cotización </Fragment>
+
+  <!-- Brand Services -->
+  <Fragment slot='brand-services-header'>
+    Soluciones creativas para hacer <strong>crecer tu marca</strong>
+  </Fragment>
+  <Fragment slot='brand-services-body'>
+    Ofrecemos soluciones de branding, publicidad y desarrollo web. Trabajamos en
+    estrecha colaboración con nuestros clientes para entender sus necesidades y
+    objetivos únicos, y transformar sus ideas en campañas exitosas.
+  </Fragment>
 
   <!-- Creativity -->
   <Fragment slot={'creativity-header'}>
@@ -32,7 +60,7 @@ const heroVideoSrc = '/videos/loop-fire.mp4'
   </Fragment>
   <!-- <Fragment slot={'creativity-card-icon-1'}></Fragment> -->
   <Fragment slot={'creativity-card-header-1'}>
-    <strong>Creatividad Innovadora</strong>
+    <strong>Creatividad<br />Innovadora</strong>
   </Fragment>
   <Fragment slot={'creativity-card-body-1'}>
     Creamos identidades de marca poderosas y coherentes que reflejan la esencia
@@ -40,7 +68,7 @@ const heroVideoSrc = '/videos/loop-fire.mp4'
   </Fragment>
   <!-- <Fragment slot={'creativity-card-icon-2'}></Fragment> -->
   <Fragment slot={'creativity-card-header-2'}>
-    <strong>Estrategias Efectivas</strong>
+    <strong>Estrategias<br />Efectivas</strong>
   </Fragment>
   <Fragment slot={'creativity-card-body-2'}>
     Diseñamos y ejecutamos campañas publicitarias efectivas en múltiples
@@ -48,7 +76,7 @@ const heroVideoSrc = '/videos/loop-fire.mp4'
   </Fragment>
   <!-- <Fragment slot={'creativity-card-icon-3'}></Fragment> -->
   <Fragment slot={'creativity-card-header-3'}>
-    <strong>Resultados Excepcionales</strong>
+    <strong>Resultados<br />Excepcionales</strong>
   </Fragment>
   <Fragment slot={'creativity-card-body-3'}>
     Ofrecemos soluciones completas fortaleciendo la presencia en línea de
@@ -158,4 +186,29 @@ const heroVideoSrc = '/videos/loop-fire.mp4'
     detalles.
   </Fragment>
   <Fragment slot={'ad-production-cta'}> Solicita tu cotización </Fragment>
+
+  <Fragment slot={'web-design-header'}>
+    Soluciones de diseño y desarrollo web que combinan estética y funcionalidad
+  </Fragment>
+  <Fragment slot={'web-design-cta'}> Solicita tu cotización </Fragment>
+
+  <Fragment slot={'web-design-card-header-1'}>
+    Posicionamos tu marca optimizando tu web en motores de búsqueda SEO</Fragment
+  >
+  <Fragment slot={'web-design-card-body-1'}>
+    Creamos sitios web corporativos y tiendas en línea que mejoran la
+    interacción con las audiencias. dsadadada dsadsadsadsadsad dsadsadsad</Fragment
+  >
+  <Fragment slot={'web-design-card-header-2'}>
+    Diseño web que refleja la esencia y valores de tu marca
+  </Fragment>
+  <Fragment slot={'web-design-card-body-2'}>
+    Creamos identidades de marca poderosas y coherentes
+  </Fragment>
+  <Fragment slot={'web-design-card-header-3'}>
+    Agilizamos los tiempos de carga para una mejor experiencia de tus usuarios
+  </Fragment>
+  <Fragment slot={'web-design-card-body-3'}>
+    Ofrecemos soluciones completas de diseño y desarrollo web</Fragment
+  >
 </HomeLayout>

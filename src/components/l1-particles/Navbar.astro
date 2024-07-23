@@ -1,0 +1,31 @@
+---
+import { Typography } from '@/components'
+
+export interface Link {
+  href: string
+  label: string
+}
+
+interface Props {
+  links: Link[]
+}
+
+const { links } = Astro.props
+---
+
+<nav>
+  <ul>
+    {
+      links.map(({ href, label }) => (
+        <a href={href}>
+          <Typography
+            as='li'
+            variant={'body'}
+            color={'neutral_white'}>
+            {label}
+          </Typography>
+        </a>
+      ))
+    }
+  </ul>
+</nav>

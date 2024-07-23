@@ -1,8 +1,15 @@
 ---
 import { Typography, BaseText, BaseContainer, LinkButton } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
 ---
 
 <BaseContainer
+  id={id}
   variant={'section'}
   class='space-y-12'>
   <Typography
@@ -91,62 +98,3 @@ import { Typography, BaseText, BaseContainer, LinkButton } from '@/components'
     </Typography>
   </div>
 </BaseContainer>
-
-<!-- Slots -->
-<!-- 
-    <slot
-      name='sales-method-header'
-      slot='header'>
-      No layout slot sales-method-header
-    </slot>
-    <slot
-      name='sales-method-card-header-1'
-      slot='card-header-1'>
-      No layout slot sales-method-card-header-1
-    </slot>
-    <slot
-      name='sales-method-card-body-1'
-      slot='card-body-1'>
-      No layout slot sales-method-card-body-1
-    </slot>
-    <slot
-      name='sales-method-card-header-2'
-      slot='card-header-2'>
-      No layout slot sales-method-card-header-2
-    </slot>
-    <slot
-      name='sales-method-card-body-2'
-      slot='card-body-2'>
-      No layout slot sales-method-card-body-2
-    </slot>
-    <slot
-      name='sales-method-card-header-3'
-      slot='card-header-3'>
-      No layout slot sales-method-card-header-3
-    </slot>
-    <slot
-      name='sales-method-card-body-3'
-      slot='card-body-3'>
-      No layout slot sales-method-card-body-3
-    </slot>
-    <slot
-      name='sales-method-card-header-4'
-      slot='card-header-4'>
-      No layout slot sales-method-card-header-4
-    </slot>
-    <slot
-      name='sales-method-card-body-4'
-      slot='card-body-4'>
-      No layout slot sales-method-card-body-4
-    </slot>
-    <slot
-      name='sales-method-cta'
-      slot='cta'>
-      No layout slot sales-method-cta
-    </slot>
-    <slot
-      name='sales-method-body'
-      slot='body'>
-      No layout slot sales-method-body
-    </slot>
--->
