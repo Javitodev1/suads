@@ -25,8 +25,6 @@ import type {
   BaseCardShape,
 } from '@/components/l2-composites/BaseCard.astro'
 
-import type { HomeLayoutSlots } from '@/components/l4-layouts/HomeLayout.astro'
-
 export type {
   Color,
   Gradient,
@@ -43,5 +41,4 @@ export type {
   BorderTextStyle,
   BaseCardVariant,
   BaseCardShape,
-  HomeLayoutSlots,
 }
