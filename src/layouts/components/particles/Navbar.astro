@@ -1,0 +1,27 @@
+---
+import { Typography } from '@/components'
+
+export interface Link {
+  href: string
+  label: string
+}
+
+const links: Link[] = []
+---
+
+<nav>
+  <ul>
+    {
+      links.map(({ href, label }) => (
+        <a href={href}>
+          <Typography
+            as='li'
+            variant={'body'}
+            color={'neutral_white'}>
+            {label}
+          </Typography>
+        </a>
+      ))
+    }
+  </ul>
+</nav>

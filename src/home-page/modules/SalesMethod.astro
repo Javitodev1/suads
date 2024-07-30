@@ -1,0 +1,100 @@
+---
+import { Typography, BaseText, BaseContainer, LinkButton } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
+---
+
+<BaseContainer
+  id={id}
+  variant={'section'}
+  class='space-y-12'>
+  <Typography
+    as={'h2'}
+    variant={'title'}
+    color={'neutral_dark'}>
+    <slot name='header'>No module slot header</slot>
+  </Typography>
+  <div class='grid grid-cols-2'>
+    <div class='grid grid-cols-2 grid-rows-2 gap-12'>
+      <BaseText
+        variant={'card'}
+        theme={'dark'}>
+        <slot
+          name='card-header-1'
+          slot='header'
+          >No module slot card-header-1</slot
+        >
+
+        <slot
+          name='card-body-1'
+          slot='body'
+          >No module slot card-body-1</slot
+        >
+      </BaseText>
+
+      <BaseText
+        variant={'card'}
+        theme={'dark'}>
+        <slot
+          name='card-header-2'
+          slot='header'
+          >No module slot card-header-2</slot
+        >
+
+        <slot
+          name='card-body-2'
+          slot='body'
+          >No module slot card-body-2</slot
+        >
+      </BaseText>
+
+      <BaseText
+        variant={'card'}
+        theme={'dark'}>
+        <slot
+          name='card-header-3'
+          slot='header'
+          >No module slot card-header-3</slot
+        >
+
+        <slot
+          name='card-body-3'
+          slot='body'
+          >No module slot card-body-3</slot
+        >
+      </BaseText>
+
+      <BaseText
+        variant={'card'}
+        theme={'dark'}>
+        <slot
+          name='card-header-4'
+          slot='header'
+          >No module slot card-header-4</slot
+        >
+
+        <slot
+          name='card-body-4'
+          slot='body'
+          >No module slot card-body-4</slot
+        >
+      </BaseText>
+    </div>
+  </div>
+
+  <div class='flex justify-between items-end'>
+    <LinkButton gradient={'accent_1'}
+      ><slot name='cta'>No module slot cta</slot></LinkButton
+    >
+    <Typography
+      as={'p'}
+      variant={'sidecard_title'}
+      color={'neutral_dark'}>
+      <slot name='body'>No module slot body</slot>
+    </Typography>
+  </div>
+</BaseContainer>
