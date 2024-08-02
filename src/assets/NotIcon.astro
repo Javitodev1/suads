@@ -1,0 +1,17 @@
+---
+import Icon from '@astropub/icons/Component1'
+import type { BaseCardVariant } from '@/types/components'
+
+interface Props {
+  variant: BaseCardVariant
+}
+
+const { variant } = Astro.props
+
+const fill = variant === 'dark' || variant === 'transparent_dark' ? '#fff' : '#000'
+---
+
+<Icon
+  fill={fill}
+  size={120}
+/>

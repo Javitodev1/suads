@@ -1,0 +1,78 @@
+---
+import type { HTMLTag } from 'astro/types'
+import { Typography } from '@/components'
+import type { TypographyVariant } from '@/types/components'
+import type { Color } from '@/types/utils'
+
+enum VariantKeys {
+  hero,
+  section,
+  card,
+  sidecard,
+}
+
+enum ThemeKeys {
+  dark,
+  light,
+}
+
+type Variant = keyof typeof VariantKeys
+type Theme = keyof typeof ThemeKeys
+
+interface VariantField {
+  headerAs: HTMLTag
+  headerVariant: TypographyVariant
+}
+
+interface ThemeField {
+  headerColor: Color
+  bodyColor: Color
+}
+
+const Variants: Record<Variant, VariantField> = {
+  hero: { headerAs: 'h1', headerVariant: 'banner' },
+  section: { headerAs: 'h2', headerVariant: 'title' },
+  card: { headerAs: 'h3', headerVariant: 'subtitle' },
+  sidecard: { headerAs: 'h3', headerVariant: 'sidecard_title' },
+}
+
+const Themes: Record<Theme, ThemeField> = {
+  dark: {
+    headerColor: 'neutral_dark',
+    bodyColor: 'neutral_dark_less',
+  },
+  light: {
+    headerColor: 'neutral_white',
+    bodyColor: 'neutral_white_less',
+  },
+}
+
+interface Props {
+  variant: Variant
+  theme: Theme
+  class?: string
+}
+
+const { variant, theme, class: className } = Astro.props
+const { headerAs, headerVariant } = Variants[variant]
+const { headerColor, bodyColor } = Themes[theme]
+
+export type { Variant as BaseTextVariant, Theme as BaseTextTheme }
+---
+
+<div class:list={className}>
+  <Typography
+    as={headerAs}
+    variant={headerVariant}
+    color={headerColor}>
+    <slot name='header'>No slot header</slot>
+  </Typography>
+
+  <Typography
+    as={'p'}
+    variant={'body'}
+    color={bodyColor}
+    class='mt-6'>
+    <slot name='body'>No slot body</slot>
+  </Typography>
+</div>

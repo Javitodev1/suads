@@ -1,0 +1,40 @@
+---
+import { BaseCard } from '@/components'
+import { NotIcon } from '@/assets'
+import { getShadow } from '@/utils/shadows'
+import type { BaseCardVariant, BaseCardShape } from '@/types/components'
+
+interface Props {
+  variant: BaseCardVariant
+  shape: BaseCardShape
+  class?: string
+}
+
+const { variant, shape, class: className } = Astro.props
+const classes = [className, getShadow('card')]
+---
+
+<BaseCard
+  variant={variant}
+  shape={shape}
+  class:list={classes}
+  class='rounded-xl text-center'>
+  <div
+    class='mb-6 w-fit mx-auto'
+    slot='after'>
+    <slot name='icon'>
+      <NotIcon variant={variant} />
+    </slot>
+  </div>
+
+  <slot
+    name='header'
+    slot='header'>
+    No slot header
+  </slot>
+  <slot
+    name='body'
+    slot='body'>
+    No slot Body
+  </slot>
+</BaseCard>

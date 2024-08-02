@@ -1,0 +1,26 @@
+---
+interface Props {
+  src: string
+}
+
+const { src } = Astro.props
+---
+
+<section class='h-screen relative'>
+  <video
+    autoplay
+    muted
+    loop
+    preload='auto'
+    class='size-full object-center object-cover col-start-1 row-start-1'>
+    <source
+      src={src}
+      type={'video/mp4'}
+    />
+    Tu navegador no admite el elemento <code>video</code>.
+  </video>
+
+  <div class='col-start-1 row-start-1 absolute top-0 left-0 size-full'>
+    <slot />
+  </div>
+</section>

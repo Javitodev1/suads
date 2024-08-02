@@ -1,5 +1,6 @@
 ---
-import { BaseContainer, IconCard, SEOImage } from '@/components'
+import { BaseContainer, IconCard } from '@/components'
+import { SEOImage } from '@/assets'
 
 interface Props {
   images: string[]
@@ -9,13 +10,7 @@ interface Props {
   id?: string
 }
 
-const {
-  images,
-  id,
-  alts = [],
-  largeImages = [],
-  mediumImages = [],
-} = Astro.props
+const { images, id, alts = [], largeImages = [], mediumImages = [] } = Astro.props
 const [image1, image2, image3] = images
 const [large1, large2, large3] = largeImages
 const [medium1, medium2, medium3] = mediumImages

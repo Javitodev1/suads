@@ -1,0 +1,22 @@
+---
+import { BaseContainer } from '@/components'
+import { getGradient } from '@/utils/gradients'
+import type { BaseContainerVariant } from '@/types/components'
+import type { Gradient } from '@/types/utils'
+
+interface Props {
+  variant: BaseContainerVariant
+  gradient: Gradient
+  children: any
+  class?: string
+}
+
+const { variant, gradient, class: className } = Astro.props
+const classes = [className, getGradient(gradient)]
+---
+
+<BaseContainer
+  variant={variant}
+  class:list={classes}
+  ><slot />
+</BaseContainer>

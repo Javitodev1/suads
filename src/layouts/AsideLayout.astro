@@ -1,5 +1,5 @@
 ---
-import { Header, Footer } from './components'
+import { Header, Footer } from './partials'
 
 interface Props {
   title?: string
@@ -7,11 +7,7 @@ interface Props {
   keywords?: string
 }
 
-const {
-  title = 'No Title',
-  desc = 'No Description',
-  keywords = 'No Keywords',
-} = Astro.props
+const { title = 'No Title', desc = 'No Description', keywords = 'No Keywords' } = Astro.props
 ---
 
 <html lang='es'>
@@ -35,15 +31,15 @@ const {
   <body>
     <div class='grid grid-cols-12'>
       <aside class='col-span-2 relative min-w-40'>
-        <div class='sticky h-screen w-full top-0 left-0 p-6 bg-neutral-700'>
-          <Header />
-        </div>
+        <Header />
       </aside>
 
-      <main class='col-span-10'>
-        <slot />
+      <aside class='col-span-10'>
+        <main>
+          <slot />
+        </main>
         <Footer />
-      </main>
+      </aside>
     </div>
   </body>
 </html>

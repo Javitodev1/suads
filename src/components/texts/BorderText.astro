@@ -1,0 +1,53 @@
+---
+import { BaseText } from '@/components'
+import { getBorderColor } from '@/utils/colors'
+import type { BaseTextVariant as Variant, BaseTextTheme as Theme } from '@/types/components'
+import type { Color } from '@/types/utils'
+
+const Sides = {
+  none: '',
+  left: 'border-l-[3px]',
+  both: 'border-x-[3px]',
+  bold_left: 'border-l-4',
+  bold_both: 'border-x-4',
+}
+
+const Styles = {
+  dotted: 'border-dotted',
+  solid: 'border-solid',
+}
+
+type Side = keyof typeof Sides
+type Style = keyof typeof Styles
+
+export type { Side as BorderTextSide, Style as BorderTextStyle, Variant as BorderTextVariant, Theme as BorderTextTheme }
+
+interface Props {
+  variant: Variant
+  theme: Theme
+  side: Side
+  style: Style
+  borderColor: Color
+}
+
+const { theme, variant, side, style, borderColor } = Astro.props
+
+const classes = [getBorderColor(borderColor), Sides[side], Styles[style]]
+---
+
+<BaseText
+  class:list={classes}
+  class='p-6'
+  theme={theme}
+  variant={variant}
+  ><slot
+    name='header'
+    slot='header'
+    >No slot header</slot
+  >
+  <slot
+    name='body'
+    slot='body'
+    >No Slot body</slot
+  >
+</BaseText>

@@ -1,10 +1,6 @@
 ---
-import {
-  IconCard,
-  BaseText,
-  BaseContainer,
-  PlaceholderIcon,
-} from '@/components'
+import { IconCard, BaseText, BaseContainer } from '@/components'
+import { NotIcon } from '@/assets'
 
 interface Props {
   id?: string
@@ -39,7 +35,7 @@ const { id } = Astro.props
       <slot
         name='card-icon-1'
         slot='icon'>
-        <PlaceholderIcon variant={'dark'} />
+        <NotIcon variant={'dark'} />
       </slot>
       <slot
         name='card-header-1'
@@ -59,7 +55,7 @@ const { id } = Astro.props
       <slot
         name='card-icon-2'
         slot='icon'>
-        <PlaceholderIcon variant={'dark'} />
+        <NotIcon variant={'dark'} />
       </slot>
       <slot
         name='card-header-2'
@@ -79,7 +75,7 @@ const { id } = Astro.props
       <slot
         name='card-icon-3'
         slot='icon'>
-        <PlaceholderIcon variant={'dark'} />
+        <NotIcon variant={'dark'} />
       </slot>
       <slot
         name='card-header-3'

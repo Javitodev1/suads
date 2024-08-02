@@ -1,4 +1,5 @@
 import Logo from './Logo.astro'
-import PlaceholderIcon from './PlaceholderIcon.astro'
+import NotIcon from './NotIcon.astro'
+import SEOImage from './SEOImage.astro'
 
-export { Logo, PlaceholderIcon }
+export { Logo, NotIcon, SEOImage }
