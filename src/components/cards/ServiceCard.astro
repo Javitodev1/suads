@@ -1,0 +1,73 @@
+---
+import { Typography } from '@/components'
+
+interface Props {
+  src: string
+  alt?: string
+}
+
+const { src, alt = 'card image alt' } = Astro.props
+---
+
+<a
+  href='#'
+  class='link-card'>
+  <article
+    class='w-full h-[520px] bg-black relative group overflow-hidden flex flex-col justify-end p-10'>
+    <picture>
+      <img
+        src={src}
+        alt={alt}
+        class='absolute top-0 left-0 object-cover object-center duration-700 size-full opacity-70 group-hover:scale-125 group-hover:opacity-10'
+      />
+    </picture>
+
+    <div
+      class='relative mb-0 break-words duration-500 header-container group-hover:mb-2'>
+      <Typography as={'h3'} variant={'subtitle'} color={'neutral_white'}>
+        <slot name='header'>No slot header</slot>
+      </Typography>
+    </div>
+
+    <div
+      class='relative duration-500 translate-y-full opacity-0 body-container group-hover:translate-y-0 group-hover:opacity-100'>
+      <Typography as={'p'} variant={'body'} color={'neutral_white'}>
+        <slot name='body'>No slot body</slot>
+      </Typography>
+    </div>
+  </article>
+</a>
+
+<script>
+  const cards: NodeListOf<HTMLDivElement> =
+    document.querySelectorAll('.link-card')!
+  const headerContainers: NodeListOf<HTMLDivElement> =
+    document.querySelectorAll('.link-card .header-container')!
+  const bodyContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll(
+    '.link-card .body-container'
+  )!
+
+  const handleMouseOver = (header: HTMLDivElement) => {
+    header.style.transform = `translateY(0)`
+  }
+
+  const handleMouseOut = (header: HTMLDivElement, body: HTMLDivElement) => {
+    header.style.transform = `translateY(${body.clientHeight}px)`
+  }
+
+  cards.forEach((card, index) => {
+    const header = headerContainers[index]
+    const body = bodyContainers[index]
+    card.addEventListener('mouseover', () => handleMouseOver(header))
+    card.addEventListener('mouseout', () => handleMouseOut(header, body))
+
+    handleMouseOut(header, body)
+  })
+
+  window.addEventListener('resize', () => {
+    headerContainers.forEach((header, index) => {
+      const body = bodyContainers[index]
+      handleMouseOut(header, body)
+    })
+  })
+</script>

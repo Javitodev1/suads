@@ -1,29 +1,16 @@
 ---
 const defaultSrc = '/images/No-Image-Placeholder.svg'
 
-interface Props {
-  src?: string
-  alt?: string
+ interface Props extends HTMLImageElement {
   large?: string
   medium?: string
-  isLazy?: boolean
   class?: string
 }
 
-const {
-  src = defaultSrc,
-  alt = 'No alt',
-  large = src,
-  medium = src,
-  isLazy = true,
-  class: className,
-  ...props
-} = Astro.props
-
-const loading = isLazy ? 'lazy' : 'eager'
+const { class: className, src, alt, large = src, medium = src, loading = 'lazy' } = Astro.props
 ---
 
-<picture class:list={className}>
+<picture>
   <source
     srcset={large}
     media='(min-width: 1200px)'
@@ -36,6 +23,6 @@ const loading = isLazy ? 'lazy' : 'eager'
     src={src}
     alt={alt}
     loading={loading}
-    {...props}
+    class:list={className}
   />
 </picture>
