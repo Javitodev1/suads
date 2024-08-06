@@ -1,11 +1,11 @@
 ---
-import { Typography, BorderText, BaseContainer, LinkButton } from '@/components'
+import { Typography, BaseContainer, LinkButton } from '@/components'
 
 interface Props {
   id?: string
 }
 
-const { id } = Astro.props
+const { id='ad-production' } = Astro.props
 ---
 
 <BaseContainer
@@ -21,59 +21,7 @@ const { id } = Astro.props
 
   <div class='grid grid-cols-2'>
     <div class='space-y-12'>
-      <BorderText
-        side={'bold_left'}
-        style={'solid'}
-        theme={'dark'}
-        variant={'card'}
-        borderColor={'accent_title'}>
-        <slot
-          name='card-header-1'
-          slot='header'>
-          No module slot card-header-1
-        </slot>
-        <slot
-          name='card-body-1'
-          slot='body'>
-          No module slot card-body-1
-        </slot>
-      </BorderText>
-
-      <BorderText
-        side={'none'}
-        style={'solid'}
-        theme={'dark'}
-        variant={'card'}
-        borderColor={'accent_title'}>
-        <slot
-          name='card-header-2'
-          slot='header'>
-          No module slot card-header-2
-        </slot>
-        <slot
-          name='card-body-2'
-          slot='body'>
-          No module slot card-body-2
-        </slot>
-      </BorderText>
-
-      <BorderText
-        side={'none'}
-        style={'solid'}
-        theme={'dark'}
-        variant={'card'}
-        borderColor={'accent_title'}>
-        <slot
-          name='card-header-3'
-          slot='header'>
-          No module slot card-header-3
-        </slot>
-        <slot
-          name='card-body-3'
-          slot='body'>
-          No module slot card-body-3
-        </slot>
-      </BorderText>
+      <slot name="cards">No module slot cards</slot>
 
       <LinkButton
         gradient={'accent_1'}

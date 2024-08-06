@@ -1,19 +1,23 @@
 ---
+import type { HTMLAttributes } from 'astro/types'
 import { Typography } from '@/components'
+import { getShadow } from '@/utils/shadows'
 
-interface Props {
+interface Props extends HTMLAttributes<'a'> {
   src: string
   alt?: string
 }
 
-const { src, alt = 'card image alt' } = Astro.props
+const { src, alt = 'card image alt', ...props } = Astro.props
+const classes = [getShadow('card')]
 ---
 
 <a
-  href='#'
-  class='link-card'>
+  {...props}
+  class='service-card'>
   <article
-    class='w-full h-[520px] bg-black relative group overflow-hidden flex flex-col justify-end p-10'>
+    class:list={classes}
+    class='w-full h-[520px] bg-black relative group overflow-hidden flex flex-col justify-end p-10 rounded-lg'>
     <picture>
       <img
         src={src}
@@ -22,16 +26,21 @@ const { src, alt = 'card image alt' } = Astro.props
       />
     </picture>
 
-    <div
-      class='relative mb-0 break-words duration-500 header-container group-hover:mb-2'>
-      <Typography as={'h3'} variant={'subtitle'} color={'neutral_white'}>
+    <div class='relative mb-0 break-words duration-500 header-container group-hover:mb-2'>
+      <Typography
+        as={'h3'}
+        variant={'subtitle'}
+        color={'neutral_white'}>
         <slot name='header'>No slot header</slot>
       </Typography>
     </div>
 
     <div
       class='relative duration-500 translate-y-full opacity-0 body-container group-hover:translate-y-0 group-hover:opacity-100'>
-      <Typography as={'p'} variant={'body'} color={'neutral_white'}>
+      <Typography
+        as={'p'}
+        variant={'body'}
+        color={'neutral_white'}>
         <slot name='body'>No slot body</slot>
       </Typography>
     </div>
@@ -39,13 +48,9 @@ const { src, alt = 'card image alt' } = Astro.props
 </a>
 
 <script>
-  const cards: NodeListOf<HTMLDivElement> =
-    document.querySelectorAll('.link-card')!
-  const headerContainers: NodeListOf<HTMLDivElement> =
-    document.querySelectorAll('.link-card .header-container')!
-  const bodyContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll(
-    '.link-card .body-container'
-  )!
+  const cards: NodeListOf<HTMLDivElement> = document.querySelectorAll('.service-card')!
+  const headerContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll('.service-card .header-container')!
+  const bodyContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll('.service-card .body-container')!
 
   const handleMouseOver = (header: HTMLDivElement) => {
     header.style.transform = `translateY(0)`

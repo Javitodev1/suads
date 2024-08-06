@@ -3,11 +3,11 @@ import { Header, Footer } from './partials'
 
 interface Props {
   title?: string
-  desc?: string
+  description?: string
   keywords?: string
 }
 
-const { title = 'No Title', desc = 'No Description', keywords = 'No Keywords' } = Astro.props
+const { title = 'No Title', description = 'No Description', keywords = 'No Keywords' } = Astro.props
 ---
 
 <html lang='es'>
@@ -19,7 +19,7 @@ const { title = 'No Title', desc = 'No Description', keywords = 'No Keywords' } 
     />
     <meta
       name='description'
-      content={desc}
+      content={description}
     />
     <meta
       name='keywords'

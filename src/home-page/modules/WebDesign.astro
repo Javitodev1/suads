@@ -1,11 +1,18 @@
 ---
 import { BaseContainer, Typography, LinkButton, IconCard, Separator } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id = 'web-design' } = Astro.props
 ---
 
 <Separator variant={'up_top'} />
 <BaseContainer
   variant={'hero'}
-  class='bg-neutral-dark space-y-12'>
+  class='bg-neutral-dark space-y-12'
+  id={id}>
   <Typography
     class='text-center'
     as={'h2'}
@@ -21,49 +28,6 @@ import { BaseContainer, Typography, LinkButton, IconCard, Separator } from '@/co
   </div>
 
   <div class='grid grid-cols-3 gap-x-12'>
-    <IconCard
-      variant={'light'}
-      shape={'full'}>
-      <slot
-        name='card-header-1'
-        slot='header'>
-        No module slot card-header-1
-      </slot>
-      <slot
-        name='card-body-1'
-        slot='body'>
-        No module slot card-body-1
-      </slot>
-    </IconCard>
-
-    <IconCard
-      variant={'light'}
-      shape={'full'}>
-      <slot
-        name='card-header-2'
-        slot='header'>
-        No module slot card-header-1
-      </slot>
-      <slot
-        name='card-body-2'
-        slot='body'>
-        No module slot card-body-1
-      </slot>
-    </IconCard>
-
-    <IconCard
-      variant={'light'}
-      shape={'full'}>
-      <slot
-        name='card-header-3'
-        slot='header'>
-        No module slot card-header-1
-      </slot>
-      <slot
-        name='card-body-3'
-        slot='body'>
-        No module slot card-body-1
-      </slot>
-    </IconCard>
+    <slot name="cards" />
   </div>
 </BaseContainer>

@@ -1,48 +1,49 @@
 ---
-import { BgVideoContainer, BaseContainer, BaseText, LinkButton } from '@/components'
-
-const Variants = {
-  ['left']: 'flex-row',
-  ['right']: 'flex-row-reverse',
-}
-
-export type Variant = keyof typeof Variants
+import { Typography, LinkButton } from '@/components'
 
 interface Props {
   src: string
   id?: string
-  variant?: Variant
 }
 
-const { src, id, variant = 'left' } = Astro.props
-const classes = [Variants[variant]]
+const { src, id = 'hero' } = Astro.props
 ---
 
-<BgVideoContainer src={src}>
-  <BaseContainer
-    id={id}
-    variant={'hero'}
-    class='h-full flex items-center'
-    class:list={classes}>
-    <div class='max-w-md space-y-12'>
-      <BaseText
-        variant={'hero'}
-        theme={'light'}>
-        <slot
-          name='header'
-          slot='header'>
-          No module slot hero-header
-        </slot>
-        <slot
-          name='body'
-          slot='body'>
-          No module slot hero-body
-        </slot>
-      </BaseText>
+<section
+  class='relative'
+  id={id}>
+  <video
+    autoplay
+    muted
+    loop
+    class='absolute top-0 left-0 size-full object-cover object-center'>
+    <source
+      src={src}
+      type='video/mp4'
+    />
+  </video>
 
-      <LinkButton gradient={'accent_1'}>
+  <div class='flex flex-row-reverse relative py-40'>
+    <div class='max-w-2xl px-6'>
+      <Typography
+        as={'p'}
+        variant={'spaced'}
+        color={'neutral_white'}
+        class='mb-3'
+        ><slot name='body'>no slot body</slot></Typography
+      >
+      <Typography
+        as={'p'}
+        variant={'banner'}
+        color={'neutral_white'}
+        ><slot name='header'>no slot header</slot></Typography
+      >
+
+      <LinkButton
+        gradient={'accent_1'}
+        class='mt-14'>
         <slot name='cta'> No module slot hero-cta </slot>
       </LinkButton>
     </div>
-  </BaseContainer>
-</BgVideoContainer>
+  </div>
+</section>

@@ -1,11 +1,11 @@
 ---
-import { Typography, BaseText, BaseContainer, LinkButton } from '@/components'
+import { Typography, BaseContainer, LinkButton } from '@/components'
 
 interface Props {
   id?: string
 }
 
-const { id } = Astro.props
+const { id='sales-method' } = Astro.props
 ---
 
 <BaseContainer
@@ -20,69 +20,7 @@ const { id } = Astro.props
   </Typography>
   <div class='grid grid-cols-2'>
     <div class='grid grid-cols-2 grid-rows-2 gap-12'>
-      <BaseText
-        variant={'card'}
-        theme={'dark'}>
-        <slot
-          name='card-header-1'
-          slot='header'
-          >No module slot card-header-1</slot
-        >
-
-        <slot
-          name='card-body-1'
-          slot='body'
-          >No module slot card-body-1</slot
-        >
-      </BaseText>
-
-      <BaseText
-        variant={'card'}
-        theme={'dark'}>
-        <slot
-          name='card-header-2'
-          slot='header'
-          >No module slot card-header-2</slot
-        >
-
-        <slot
-          name='card-body-2'
-          slot='body'
-          >No module slot card-body-2</slot
-        >
-      </BaseText>
-
-      <BaseText
-        variant={'card'}
-        theme={'dark'}>
-        <slot
-          name='card-header-3'
-          slot='header'
-          >No module slot card-header-3</slot
-        >
-
-        <slot
-          name='card-body-3'
-          slot='body'
-          >No module slot card-body-3</slot
-        >
-      </BaseText>
-
-      <BaseText
-        variant={'card'}
-        theme={'dark'}>
-        <slot
-          name='card-header-4'
-          slot='header'
-          >No module slot card-header-4</slot
-        >
-
-        <slot
-          name='card-body-4'
-          slot='body'
-          >No module slot card-body-4</slot
-        >
-      </BaseText>
+      <slot name="cards">No module slot cards</slot>
     </div>
   </div>
 

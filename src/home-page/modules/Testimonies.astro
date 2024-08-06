@@ -1,0 +1,26 @@
+---
+import { Typography } from '@/components'
+---
+
+<section class='py-36 bg-neutral-100'>
+  <Typography
+    as={'p'}
+    variant={'spaced'}
+    color={'neutral_dark'}
+    ><slot name='before-header'>No module slot before-header</slot>
+  </Typography>
+
+  <Typography
+    as={'h2'}
+    variant={'title'}
+    color={'neutral_dark'}
+    class='mt-8'
+    ><slot name='header'>No module slot header</slot>
+  </Typography>
+
+  <div class='max-w-screen-lg mx-auto mt-16 overflow-x-auto scrollbar-hide'>
+    <div class='flex gap-8 py-8 flex-nowrap first:ml-2'>
+      <slot name='cards'>No module slot cards</slot>
+    </div>
+  </div>
+</section>

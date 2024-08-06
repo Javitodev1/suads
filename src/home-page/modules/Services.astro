@@ -1,0 +1,47 @@
+---
+import { Typography, BaseContainer } from '@/components'
+
+interface Props {
+  id?: string
+}
+
+const { id = 'services' } = Astro.props
+---
+
+<BaseContainer
+  variant={'section'}
+  id={id}>
+  <div class='text-center py-14'>
+    <Typography
+      as={'p'}
+      variant={'spaced'}
+      color={'neutral_dark_less'}
+      ><slot name='before-header' /></Typography
+    >
+
+    <Typography
+      as={'h2'}
+      variant={'title'}
+      color={'neutral_dark'}
+      ><slot name='header' /></Typography
+    >
+
+    <Typography
+      as={'p'}
+      variant={'sidecard_title'}
+      color={'neutral_dark'}
+      class='mt-8'
+      ><slot name='after-header' /></Typography
+    >
+  </div>
+
+  <div class='grid grid-cols-1 pt-10 pb-32 lg:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16'>
+    <slot name='cards' />
+  </div>
+</BaseContainer>
+
+<!-- 
+<section
+  class='max-w-screen-xl px-10 mx-auto'
+  id={id}>
+</section> -->
