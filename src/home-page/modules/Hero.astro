@@ -1,5 +1,5 @@
 ---
-import { Typography, LinkButton } from '@/components'
+import { Typography, LinkButton, BaseContainer } from '@/components'
 
 interface Props {
   src: string
@@ -8,10 +8,8 @@ interface Props {
 
 const { src, id = 'hero' } = Astro.props
 ---
+<BaseContainer variant={'hero'} id={id} class='relative'>
 
-<section
-  class='relative'
-  id={id}>
   <video
     autoplay
     muted
@@ -22,9 +20,9 @@ const { src, id = 'hero' } = Astro.props
       type='video/mp4'
     />
   </video>
-
+  
   <div class='flex flex-row-reverse relative py-40'>
-    <div class='max-w-2xl px-6'>
+    <div class='max-w-2xl'>
       <Typography
         as={'p'}
         variant={'spaced'}
@@ -38,7 +36,7 @@ const { src, id = 'hero' } = Astro.props
         color={'neutral_white'}
         ><slot name='header'>no slot header</slot></Typography
       >
-
+  
       <LinkButton
         gradient={'accent_1'}
         class='mt-14'>
@@ -46,4 +44,5 @@ const { src, id = 'hero' } = Astro.props
       </LinkButton>
     </div>
   </div>
-</section>
+</BaseContainer>
+

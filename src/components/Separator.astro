@@ -1,4 +1,7 @@
 ---
+import type { Color } from '@/types/utils'
+import { getBackgroundColor } from '@/utils/colors'
+
 const Variants = {
   up_top: 'mask-up',
   up_bottom: 'mask-up rotate-180',
@@ -13,11 +16,14 @@ export type { Variant as SeparatorVariant }
 interface Props {
   variant: Variant
   class?: string
+  topColor?: Color
+  bottomColor?: Color
 }
 
-const { variant, class: container = 'h-20' } = Astro.props
+const { variant, class: container, topColor = 'neutral_white', bottomColor='neutral_dark' } = Astro.props
 
-const classes = [Variants[variant]]
+const topClasses = [container, getBackgroundColor(bottomColor)]
+const bottomClasses = [Variants[variant], getBackgroundColor(topColor)]
 ---
 
 <style>
@@ -30,11 +36,11 @@ const classes = [Variants[variant]]
   }
 </style>
 
-<div
-  class='relative w-full bg-neutral-dark'
-  class:list={container}>
+<section
+  class='relative w-full min-h-20'
+  class:list={topClasses}>
   <div
-    class='size-full bg-neutral-white'
-    class:list={classes}>
+    class='size-full'
+    class:list={bottomClasses}>
   </div>
-</div>
+</section>

@@ -1,13 +1,20 @@
 ---
 import * as Modules from './modules'
-import { IconCard, ServiceCard, BorderText, BaseText, TestimonyCard } from '@/components'
+import {
+  IconCard,
+  ServiceCard,
+  BorderText,
+  BaseText,
+  TestimonyCard,
+} from '@/components'
 import { AsideLayout } from '@/layouts'
 import { HOME_VIDEOS, HOME_IMAGES } from '@/assets'
 
 const SEO = {
   title: 'Suads | Agencía de Marketing Digital',
   desc: 'Agencía suads te ayuda a desarrollar tu emprendimiento paso a paso para que alcances tus objetivos',
-  keywords: 'diseño web, desarrollo web, ecommerce, social media, instagram, ads, paid media',
+  keywords:
+    'diseño web, desarrollo web, ecommerce, social media, instagram, ads, paid media',
 }
 
 const hero = {
@@ -15,27 +22,47 @@ const hero = {
 }
 
 const services = {
-  src: [HOME_IMAGES.social_media, HOME_IMAGES.paid_media, HOME_IMAGES.desarrollo_web],
-  alt: ['servicio social media', 'servicio paid media', 'servicio desarrollo web'],
+  src: [
+    HOME_IMAGES.social_media,
+    HOME_IMAGES.paid_media,
+    HOME_IMAGES.desarrollo_web,
+  ],
+  alt: [
+    'servicio social media',
+    'servicio paid media',
+    'servicio desarrollo web',
+  ],
+}
+
+const testimonies = {
+  logos: {
+    test: '/favicon.svg',
+  },
 }
 ---
 
 <AsideLayout {...SEO}>
   <Modules.Hero src={hero.src}>
-    <Fragment slot={'body'}> social media | paid media | desarrollo web </Fragment>
+    <Fragment slot={'body'}>
+      social media | paid media | desarrollo web
+    </Fragment>
     <Fragment slot={'header'}>
-      Transformamos ideas creativas en <strong>campañas exitosas</strong>
+      transforma tu <strong>visibilidad online</strong>, atraé clientes ideales
+      a través de redes sociales
     </Fragment>
     <Fragment slot={'cta'}> Solicita tu cotización </Fragment>
   </Modules.Hero>
 
   <Modules.Services>
     <Fragment slot={'before-header'}>te ayudamos a crecer</Fragment>
-    <Fragment slot={'header'}>¿qué <strong>soluciones</strong> ofrecemos?</Fragment>
+    <Fragment slot={'header'}
+      >¿qué <strong>soluciones</strong> ofrecemos?</Fragment
+    >
     <Fragment slot={'after-header'}>
       ¡Somos los mejores y queremos que tú también lo seas!
       <br />
-      La manada Cebra se enfoca en entregar soluciones personalizadas y resultados de calidad.
+      El equipo de Suads se enfoca en entregar soluciones personalizadas y resultados
+      de calidad.
     </Fragment>
 
     <Fragment slot={'cards'}>
@@ -43,21 +70,27 @@ const services = {
         src={services.src[0]}
         alt={services.alt[0]}>
         <Fragment slot={'header'}>Social<br />Media</Fragment>
-        <Fragment slot={'body'}>¡Impulsa el marketing de tus redes sociales!</Fragment>
+        <Fragment slot={'body'}
+          >¡Impulsa el marketing de tus redes sociales!</Fragment
+        >
       </ServiceCard>
 
       <ServiceCard
         src={services.src[1]}
         alt={services.alt[1]}>
         <Fragment slot={'header'}>Paid<br />Media</Fragment>
-        <Fragment slot={'body'}>¡Impulsa el marketing de tus redes sociales!</Fragment>
+        <Fragment slot={'body'}
+          >¡Impulsa el marketing de tus redes sociales!</Fragment
+        >
       </ServiceCard>
 
       <ServiceCard
         src={services.src[2]}
         alt={services.alt[2]}>
         <Fragment slot={'header'}>Desarrollo<br />Web</Fragment>
-        <Fragment slot={'body'}>¡Impulsa el marketing de tus redes sociales!</Fragment>
+        <Fragment slot={'body'}
+          >¡Impulsa el marketing de tus redes sociales!</Fragment
+        >
       </ServiceCard>
     </Fragment>
   </Modules.Services>
@@ -67,9 +100,11 @@ const services = {
       Transformamos ideas en campañas <strong>impactantes y exitosas</strong>
     </Fragment>
     <Fragment slot='body'>
-      En nuestra agencia, nos enfocamos en desarrollar estrategias publicitarias innovadoras y efectivas que generan
-      resultados excepcionales. Trabajamos en estrecha colaboración con nuestros clientes para entender sus necesidades
-      y objetivos únicos, y así poder crear campañas creativas y exitosas.
+      En nuestra agencia, nos enfocamos en desarrollar estrategias publicitarias
+      innovadoras y efectivas que generan resultados excepcionales. Trabajamos
+      en estrecha colaboración con nuestros clientes para entender sus
+      necesidades y objetivos únicos, y así poder crear campañas creativas y
+      exitosas.
     </Fragment>
     <Fragment slot='cards'>
       <IconCard
@@ -80,7 +115,8 @@ const services = {
         </Fragment>
 
         <Fragment slot='body'>
-          Creamos identidades de marca poderosas y coherentes que reflejan la esencia y valores de cada empresa.
+          Creamos identidades de marca poderosas y coherentes que reflejan la
+          esencia y valores de cada empresa.
         </Fragment>
       </IconCard>
 
@@ -92,8 +128,8 @@ const services = {
         </Fragment>
 
         <Fragment slot='body'>
-          Diseñamos y ejecutamos campañas publicitarias efectivas en múltiples plataformas para maximizar el alcance y
-          el impacto de cada mensaje.
+          Diseñamos y ejecutamos campañas publicitarias efectivas en múltiples
+          plataformas para maximizar el alcance y el impacto de cada mensaje.
         </Fragment>
       </IconCard>
 
@@ -105,8 +141,8 @@ const services = {
         </Fragment>
 
         <Fragment slot='body'>
-          Ofrecemos soluciones completas fortaleciendo la presencia en línea de nuestros clientes y mejorando la
-          interacción con sus audiencias.
+          Ofrecemos soluciones completas fortaleciendo la presencia en línea de
+          nuestros clientes y mejorando la interacción con sus audiencias.
         </Fragment>
       </IconCard>
     </Fragment>
@@ -117,8 +153,9 @@ const services = {
       Descubre cómo funciona nuestro <strong>servicio de publicidad</strong>
     </Fragment>
     <Fragment slot='body'>
-      Nuestro servicio se basa en la colaboración estrecha con nuestros clientes para entender sus necesidades y
-      objetivos únicos. A través de un equipo de expertos en marketing, diseño y desarrollo web, transformamos ideas
+      Nuestro servicio se basa en la colaboración estrecha con nuestros clientes
+      para entender sus necesidades y objetivos únicos. A través de un equipo de
+      expertos en marketing, diseño y desarrollo web, transformamos ideas
       creativas en campañas exitosas.
     </Fragment>
 
@@ -131,8 +168,8 @@ const services = {
         borderColor={'neutral_white'}>
         <Fragment slot='header'> <strong>Primer encuentro</strong></Fragment>
         <Fragment slot='body'
-          >Organizamos una reunión inicial donde discutimos tu visión, tus desafíos actuales y tus objetivos a corto y
-          largo plazo.</Fragment
+          >Organizamos una reunión inicial donde discutimos tu visión, tus
+          desafíos actuales y tus objetivos a corto y largo plazo.</Fragment
         >
       </BorderText>
 
@@ -142,9 +179,12 @@ const services = {
         side={'left'}
         style={'dotted'}
         borderColor={'neutral_white'}>
-        <Fragment slot='header'> <strong>Estrategia publicitaria</strong></Fragment>
+        <Fragment slot='header'>
+          <strong>Estrategia publicitaria</strong></Fragment
+        >
         <Fragment slot='body'
-          >Presentamos nuestra propuesta de un plan personalizado y detallado que se alinee con tus metas.</Fragment
+          >Presentamos nuestra propuesta de un plan personalizado y detallado
+          que se alinee con tus metas.</Fragment
         >
       </BorderText>
 
@@ -156,7 +196,8 @@ const services = {
         borderColor={'neutral_white'}>
         <Fragment slot='header'> <strong>Revisión y ajuste</strong></Fragment>
         <Fragment slot='body'
-          >Recibimos tu feedback y realizamos los ajustes necesarios para perfeccionar la estrategia.</Fragment
+          >Recibimos tu feedback y realizamos los ajustes necesarios para
+          perfeccionar la estrategia.</Fragment
         >
       </BorderText>
 
@@ -166,9 +207,12 @@ const services = {
         side={'left'}
         style={'dotted'}
         borderColor={'neutral_white'}>
-        <Fragment slot='header'> <strong>Monitoreo y optimización</strong></Fragment>
+        <Fragment slot='header'>
+          <strong>Monitoreo y optimización</strong></Fragment
+        >
         <Fragment slot='body'
-          >Utilizamos herramientas avanzadas de seguimiento para monitorear el desempeño de la campaña en tiempo real.</Fragment
+          >Utilizamos herramientas avanzadas de seguimiento para monitorear el
+          desempeño de la campaña en tiempo real.</Fragment
         >
       </BorderText>
 
@@ -180,7 +224,8 @@ const services = {
         borderColor={'neutral_white'}>
         <Fragment slot='header'> <strong>Revisión y reportes</strong></Fragment>
         <Fragment slot='body'
-          >Organizamos reuniones periódicas para presentarte informes detallados sobre el rendimiento de la campaña.</Fragment
+          >Organizamos reuniones periódicas para presentarte informes detallados
+          sobre el rendimiento de la campaña.</Fragment
         >
       </BorderText>
 
@@ -210,8 +255,9 @@ const services = {
         <Fragment slot='header'>Atraemos</Fragment>
 
         <Fragment slot='body'
-          >Activamos diferentes estrategias de marketing digital para incrementar el flujo de tráfico hacia tu negocio y
-          captamos la atención de usuarios con gustos relacionados a tu marca.</Fragment
+          >Activamos diferentes estrategias de marketing digital para
+          incrementar el flujo de tráfico hacia tu negocio y captamos la
+          atención de usuarios con gustos relacionados a tu marca.</Fragment
         >
       </BaseText>
 
@@ -221,8 +267,9 @@ const services = {
         <Fragment slot='header'>Convertimos</Fragment>
 
         <Fragment slot='body'
-          >Mantenemos un entorno digital que inspire confianza en tus visitantes y conectamos tus productos y servicios
-          con sus intereses, deseos o necesidades. ¡Transformamos a los visitantes en compradores!</Fragment
+          >Mantenemos un entorno digital que inspire confianza en tus visitantes
+          y conectamos tus productos y servicios con sus intereses, deseos o
+          necesidades. ¡Transformamos a los visitantes en compradores!</Fragment
         >
       </BaseText>
 
@@ -232,8 +279,9 @@ const services = {
         <Fragment slot='header'>Fidelizamos</Fragment>
 
         <Fragment slot='body'
-          >Cuidamos la relación con tus clientes después de sus compras. Desarrollamos contenido y les brindamos
-          experiencias personalizadas para hacerlos admiradores y promotores de tu marca.</Fragment
+          >Cuidamos la relación con tus clientes después de sus compras.
+          Desarrollamos contenido y les brindamos experiencias personalizadas
+          para hacerlos admiradores y promotores de tu marca.</Fragment
         >
       </BaseText>
 
@@ -243,14 +291,17 @@ const services = {
         <Fragment slot='header'>Monitoreamos</Fragment>
 
         <Fragment slot='body'
-          >Hacemos seguimiento a tus objetivos de venta y a los resultados de la estrategia para implementar constantes
-          optimizaciones y mantener un crecimiento constante en la rentabilidad de tu negocio.</Fragment
+          >Hacemos seguimiento a tus objetivos de venta y a los resultados de la
+          estrategia para implementar constantes optimizaciones y mantener un
+          crecimiento constante en la rentabilidad de tu negocio.</Fragment
         >
       </BaseText>
     </Fragment>
 
     <Fragment slot='cta'> Solicita tu cotización </Fragment>
-    <Fragment slot='body'> Transformamos ideas en campañas impactantes y exitosas </Fragment>
+    <Fragment slot='body'>
+      Transformamos ideas en campañas impactantes y exitosas
+    </Fragment>
   </Modules.SalesMethod>
 
   <Modules.AdProduction>
@@ -265,8 +316,9 @@ const services = {
         borderColor={'accent_title'}>
         <Fragment slot='header'> Diseño Gráfico </Fragment>
         <Fragment slot='body'>
-          Creamos identidades de marca poderosas y coherentes que reflejan la esencia y valores de cada empresa. Nuestro
-          equipo de expertos en diseño
+          Creamos identidades de marca poderosas y coherentes que reflejan la
+          esencia y valores de cada empresa. Nuestro equipo de expertos en
+          diseño
         </Fragment>
       </BorderText>
 
@@ -278,8 +330,8 @@ const services = {
         borderColor={'accent_title'}>
         <Fragment slot='header'> Producción Audiovisual </Fragment>
         <Fragment slot='body'>
-          Nuestro equipo de diseñadores expertos se especializa en la creación de logotipos únicos y memorables.
-          Trabajamos en estrecha colaboración.
+          Nuestro equipo de diseñadores expertos se especializa en la creación
+          de logotipos únicos y memorables. Trabajamos en estrecha colaboración.
         </Fragment>
       </BorderText>
 
@@ -291,8 +343,9 @@ const services = {
         borderColor={'accent_title'}>
         <Fragment slot='header'> Redacción de Contenidos </Fragment>
         <Fragment slot='body'>
-          Creamos tarjetas de presentación profesionales y atractivas que reflejen la identidad de su marca. Nuestro
-          equipo de diseño se encarga de todos los detalles.
+          Creamos tarjetas de presentación profesionales y atractivas que
+          reflejen la identidad de su marca. Nuestro equipo de diseño se encarga
+          de todos los detalles.
         </Fragment>
       </BorderText>
     </Fragment>
@@ -301,43 +354,62 @@ const services = {
   </Modules.AdProduction>
 
   <Modules.WebDesign>
-    <Fragment slot='header'> Soluciones de diseño y desarrollo web que combinan estética y funcionalidad </Fragment>
+    <Fragment slot='header'>
+      Soluciones de diseño y desarrollo web que combinan estética y
+      funcionalidad
+    </Fragment>
     <Fragment slot='cta'> Solicita tu cotización </Fragment>
 
     <Fragment slot={'cards'}>
       <IconCard
         variant={'light'}
         shape={'full'}>
-        <slot slot='header'> Posicionamos tu marca optimizando tu web en motores de búsqueda SEO </slot>
+        <slot slot='header'>
+          Posicionamos tu marca optimizando tu web en motores de búsqueda SEO
+        </slot>
         <slot slot='body'>
-          Creamos sitios web corporativos y tiendas en línea que mejoran la interacción con las audiencias.
+          Creamos sitios web corporativos y tiendas en línea que mejoran la
+          interacción con las audiencias.
         </slot>
       </IconCard>
 
       <IconCard
         variant={'light'}
         shape={'full'}>
-        <slot slot='header'> Diseño web que refleja la esencia y valores de tu marca </slot>
-        <slot slot='body'> Creamos identidades de marca poderosas y coherentes </slot>
+        <slot slot='header'>
+          Diseño web que refleja la esencia y valores de tu marca
+        </slot>
+        <slot slot='body'>
+          Creamos identidades de marca poderosas y coherentes
+        </slot>
       </IconCard>
 
       <IconCard
         variant={'light'}
         shape={'full'}>
-        <slot slot='header'> Agilizamos los tiempos de carga para una mejor experiencia de tus usuarios </slot>
-        <slot slot='body'> Ofrecemos soluciones completas de diseño y desarrollo web </slot>
+        <slot slot='header'>
+          Agilizamos los tiempos de carga para una mejor experiencia de tus
+          usuarios
+        </slot>
+        <slot slot='body'>
+          Ofrecemos soluciones completas de diseño y desarrollo web
+        </slot>
       </IconCard>
     </Fragment>
   </Modules.WebDesign>
 
   <Modules.Testimonies>
     <Fragment slot={'before-header'}>Testimonios</Fragment>
-    <Fragment slot={'header'}>Clientes que Confían en Agencia Suads</Fragment>
+    <Fragment slot={'header'}
+      >clientes que <strong>confían</strong> en agencia suads</Fragment
+    >
     <Fragment slot={'cards'}>
-      <TestimonyCard>
+      <TestimonyCard logoSrc={testimonies.logos.test}>
         <Fragment slot={'body'}
-          >lorem ip sum Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, at! Laudantium aliquam cum vel,
-          sapiente consequatur amet doloremque, minima quasi voluptatum recusandae exercitationem voluptates voluptatem.</Fragment
+          >lorem ip sum Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Beatae, at! Laudantium aliquam cum vel, sapiente consequatur amet
+          doloremque, minima quasi voluptatum recusandae exercitationem
+          voluptates voluptatem.</Fragment
         >
         <Fragment slot={'author'}>Javito</Fragment>
         <Fragment slot={'role'}>Senior Devops</Fragment>

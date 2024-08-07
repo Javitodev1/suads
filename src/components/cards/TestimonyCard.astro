@@ -1,9 +1,18 @@
 ---
 import { Typography } from '@/components'
+
+interface Props {
+  logoSrc: string
+}
+
+const { logoSrc } = Astro.props
 ---
 
-<article class='flex-shrink-0 px-8 py-8 bg-white shadow-lg shadow-black/20 w-80'>
-  <div class='mb-4'><slot name='logo' /></div>
+<article
+  class='flex-shrink-0 px-8 py-8 bg-white shadow-lg shadow-black/20 w-80'>
+  <div class='mb-4'>
+    <img src={logoSrc} alt="Brand logo" class="brightness-0 invert-[0.8] h-12 w-auto">
+  </div>
 
   <div class='mb-16'>
     <Typography

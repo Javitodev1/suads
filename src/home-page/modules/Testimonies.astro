@@ -1,8 +1,12 @@
 ---
-import { Typography } from '@/components'
+import { Typography, BaseContainer } from '@/components'
+const id = 'testimonies'
 ---
 
-<section class='py-36 bg-neutral-100'>
+<BaseContainer
+  id={id}
+  variant={'section'}
+  class='py-36 bg-neutral-100'>
   <Typography
     as={'p'}
     variant={'spaced'}
@@ -14,7 +18,7 @@ import { Typography } from '@/components'
     as={'h2'}
     variant={'title'}
     color={'neutral_dark'}
-    class='mt-8'
+    class='mt-8 max-w-2xl'
     ><slot name='header'>No module slot header</slot>
   </Typography>
 
@@ -23,4 +27,4 @@ import { Typography } from '@/components'
       <slot name='cards'>No module slot cards</slot>
     </div>
   </div>
-</section>
+</BaseContainer>

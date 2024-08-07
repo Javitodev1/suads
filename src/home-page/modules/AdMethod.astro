@@ -11,38 +11,38 @@ interface Props {
   id?: string
 }
 
-const { id='ad-method' } = Astro.props
+const { id = 'ad-method' } = Astro.props
 ---
 
 <Separator variant={'up_top'} />
-<section class='bg-neutral-dark'>
-  <BaseContainer
-    id={id}
+
+<BaseContainer
+  id={id}
+  variant={'section'}
+  class='space-y-12 bg-neutral-dark'>
+  <BaseText
     variant={'section'}
-    class='space-y-12'>
-    <BaseText
-      variant={'section'}
-      theme={'light'}
-      class='max-w-3xl'>
-      <slot
-        name='header'
-        slot='header'
-        >No module slot header</slot
-      >
-      <slot
-        name='body'
-        slot='body'
-        >No module slot body</slot
-      >
-    </BaseText>
+    theme={'light'}
+    class='max-w-3xl'>
+    <slot
+      name='header'
+      slot='header'
+      >No module slot header</slot
+    >
+    <slot
+      name='body'
+      slot='body'
+      >No module slot body</slot
+    >
+  </BaseText>
 
-    <div class='grid grid-cols-3 grid-rows-2 gap-y-[2px]'>
-      <slot name="cards">no module slot cards</slot>
-    </div>
+  <div class='grid grid-cols-3 grid-rows-2 gap-y-[2px]'>
+    <slot name='cards'>no module slot cards</slot>
+  </div>
 
-    <LinkButton gradient={'accent_1'}>
-      <slot name='cta'>No module slot cta</slot>
-    </LinkButton>
-  </BaseContainer>
-</section>
+  <LinkButton gradient={'accent_1'}>
+    <slot name='cta'>No module slot cta</slot>
+  </LinkButton>
+</BaseContainer>
+
 <Separator variant={'up_bottom'} />
