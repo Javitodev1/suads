@@ -1,8 +1,47 @@
 ---
 import { Logo } from '@/assets'
+import { Hamburger } from '@/components'
 ---
-<header class="sticky h-screen w-full top-0 left-0 p-6 bg-neutral-700">
-  <div class='flex flex-col justify-between h-full'>
-    <Logo />
-  </div>
+
+<header
+  class='fixed top-0 left-0 z-10 flex flex-col w-full p-4 md:z-auto md:sticky md:h-full md:p-6 bg-neutral-700'>
+  <section class='flex items-center justify-between'>
+    <span class='md:w-full w-28'><Logo /></span>
+    <span class='md:hidden'>
+      <Hamburger id={'hc-hamburger'} />
+    </span>
+  </section>
+
+  <section
+    id='hc-container'
+    class='flex-grow overflow-y-hidden max-h-0 md:max-h-fit md:mt-6'>
+    <div
+      class='flex flex-col justify-between h-full gap-12 mt-4 md:mt-0 md:gap-0'>
+      <nav>
+        <!-- enlaces -->
+        <ul class='flex flex-col gap-4'>
+          <li>link 1</li>
+          <li>link 2</li>
+          <li>link 3</li>
+          <li>link 4</li>
+        </ul>
+      </nav>
+
+      <ul class='grid grid-cols-3 place-items-center'>
+        <!-- redes sociales -->
+        <li>Insta</li>
+        <li>In</li>
+        <li>Wsp</li>
+      </ul>
+    </div>
+  </section>
 </header>
+
+<script>
+  const hamburger: HTMLInputElement = document.querySelector('#hc-hamburger')!
+  const container: HTMLDivElement = document.querySelector('#hc-container')!
+
+  hamburger.addEventListener('change', () => {
+    container.classList.toggle('max-h-0')
+  })
+</script>
