@@ -8,20 +8,20 @@ interface Props {
 
 const { src, id = 'hero' } = Astro.props
 ---
-<BaseContainer variant={'hero'} id={id} class='relative'>
+<BaseContainer variant={'hero'} id={id} class='relative pt-12 md:pt-0'>
 
   <video
     autoplay
     muted
     loop
-    class='absolute top-0 left-0 size-full object-cover object-center'>
+    class='absolute top-0 left-0 object-cover object-center size-full'>
     <source
       src={src}
       type='video/mp4'
     />
   </video>
   
-  <div class='flex flex-row-reverse relative py-40'>
+  <div class='relative flex flex-row-reverse py-40'>
     <div class='max-w-2xl'>
       <Typography
         as={'p'}
