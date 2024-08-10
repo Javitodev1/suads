@@ -29,12 +29,12 @@ const { title = 'No Title', description = 'No Description', keywords = 'No Keywo
   </head>
 
   <body>
-    <div class='grid grid-cols-12'>
-      <aside class='col-span-2 relative'>
+    <div class='grid md:grid-cols-12'>
+      <aside class='md:col-span-2 relative md:h-screen'>
         <Header />
       </aside>
 
-      <aside class='col-span-10 main-container'>
+      <aside class='md:col-span-10 main-container'>
         <main>
           <slot />
         </main>
