@@ -1,0 +1,24 @@
+---
+interface Props {
+  id: string
+}
+
+const {id} = Astro.props
+---
+
+<label for='hc-hamburger' class="grid grid-cols-2 overflow-hidden gap-y-3">
+  <input
+    type='checkbox'
+    name='hamburger'
+    id='hc-hamburger'
+    class='hidden peer'
+  />
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:rotate-45 peer-checked:translate-x-1 peer-checked:translate-y-2"></div>
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:-rotate-45 peer-checked:-translate-x-1 peer-checked:translate-y-2"></div>
+
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:-translate-x-8"></div>
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:translate-x-8"></div>
+  
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:-rotate-45 peer-checked:translate-x-1 peer-checked:-translate-y-2"></div>
+  <div class="w-6 h-1 transition-transform duration-150 bg-neutral-white peer-checked:bg-accent-cta peer-checked:rotate-45 peer-checked:-translate-x-1 peer-checked:-translate-y-2"></div>
+</label>
