@@ -1,5 +1,5 @@
 ---
-import { BaseContainer, Typography, LinkButton, IconCard, Separator } from '@/components'
+import { BaseContainer, Typography, LinkButton, Separator } from '@/components'
 
 interface Props {
   id?: string
@@ -8,10 +8,10 @@ interface Props {
 const { id = 'web-design' } = Astro.props
 ---
 
-<Separator variant={'up_top'} />
+<Separator variant={'normal'} topColor={'neutral_white'} bottomColor={'neutral_dark'}/>
 <BaseContainer
   variant={'hero'}
-  class='bg-neutral-dark space-y-12'
+  class='space-y-12 bg-neutral-dark'
   id={id}>
   <Typography
     class='text-center'

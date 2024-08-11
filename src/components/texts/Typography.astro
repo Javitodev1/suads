@@ -17,6 +17,7 @@ const Variants = {
 }
 
 const FontFamily = 'font-open-sauce-sans'
+const strongCss = '[&_strong]:text-accent-title'
 
 type Variant = keyof typeof Variants
 
@@ -41,7 +42,6 @@ const {
   color: Color
   class: String
 }
-const strongCss = '[&_strong]:text-accent-title'
 
 const classes = [
   strongCss,

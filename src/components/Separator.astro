@@ -1,12 +1,10 @@
 ---
-import type { Color } from '@/types/utils'
 import { getBackgroundColor } from '@/utils/colors'
+import type { Color } from '@/types/utils'
 
 const Variants = {
-  up_top: 'mask-up',
-  up_bottom: 'mask-up rotate-180',
-  down_top: 'mask-down',
-  down_bottom: 'mask-down rotate-180',
+  normal: 'mask-up',
+  reverse: 'mask-down',
 }
 
 type Variant = keyof typeof Variants
@@ -20,10 +18,10 @@ interface Props {
   bottomColor?: Color
 }
 
-const { variant, class: container, topColor = 'neutral_white', bottomColor='neutral_dark' } = Astro.props
+const { variant, class: className, topColor = 'neutral_white', bottomColor = 'neutral_dark' } = Astro.props
 
-const topClasses = [container, getBackgroundColor(bottomColor)]
-const bottomClasses = [Variants[variant], getBackgroundColor(topColor)]
+const topClasses = [getBackgroundColor(topColor), Variants[variant]]
+const bottomClasses = [getBackgroundColor(bottomColor), Variants[variant]]
 ---
 
 <style>
@@ -36,11 +34,26 @@ const bottomClasses = [Variants[variant], getBackgroundColor(topColor)]
   }
 </style>
 
+<!-- 
 <section
   class='relative w-full min-h-20'
   class:list={topClasses}>
   <div
     class='size-full'
+    class:list={bottomClasses}>
+  </div>
+</section>
+ -->
+
+<section
+  class='relative w-full min-h-20'
+  class:list={className}>
+  <div
+    class='absolute top-0 left-0 size-full'
+    class:list={topClasses}>
+  </div>
+  <div
+    class='absolute bottom-0 left-0 rotate-180 size-full'
     class:list={bottomClasses}>
   </div>
 </section>

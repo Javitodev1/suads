@@ -30,11 +30,11 @@ const { title = 'No Title', description = 'No Description', keywords = 'No Keywo
 
   <body>
     <div class='grid md:grid-cols-12'>
-      <aside class='md:col-span-2 relative md:h-screen'>
+      <aside class='relative md:col-span-2'>
         <Header />
       </aside>
 
-      <aside class='md:col-span-10 main-container'>
+      <aside class='grid md:col-span-10 grid-template-rows'>
         <main>
           <slot />
         </main>
@@ -45,10 +45,7 @@ const { title = 'No Title', description = 'No Description', keywords = 'No Keywo
 </html>
 
 <style>
-  .main-container {
-    display: grid;
+  .grid-template-rows {
     grid-template-rows: 1fr auto;
-    grid-template-columns: 100%;
-    min-height: 100dvh;
   }
 </style>

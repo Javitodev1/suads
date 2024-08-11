@@ -1,11 +1,5 @@
 ---
-import {
-  BaseContainer,
-  BaseText,
-  BorderText,
-  Separator,
-  LinkButton,
-} from '@/components'
+import { BaseContainer, BaseText, BorderText, Separator, LinkButton } from '@/components'
 
 interface Props {
   id?: string
@@ -14,7 +8,11 @@ interface Props {
 const { id = 'ad-method' } = Astro.props
 ---
 
-<Separator variant={'up_top'} />
+<Separator
+  variant={'normal'}
+  topColor={'neutral_white'}
+  bottomColor={'neutral_dark'}
+/>
 
 <BaseContainer
   id={id}
@@ -45,4 +43,8 @@ const { id = 'ad-method' } = Astro.props
   </LinkButton>
 </BaseContainer>
 
-<Separator variant={'up_bottom'} />
+<Separator
+  variant={'normal'}
+  topColor={'neutral_dark'}
+  bottomColor={'neutral_white'}
+/>
