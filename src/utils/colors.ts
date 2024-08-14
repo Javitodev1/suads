@@ -1,4 +1,5 @@
 enum Colors {
+  none,
   neutral_dark,
   neutral_white,
   neutral_dark_less,
@@ -8,6 +9,7 @@ enum Colors {
 }
 
 const TextColors: Record<Colors, string> = {
+  [Colors.none]: '',
   [Colors.neutral_dark]: 'text-neutral-dark',
   [Colors.neutral_white]: 'text-neutral-white',
   [Colors.neutral_dark_less]: 'text-neutral-dark-less',
@@ -17,6 +19,7 @@ const TextColors: Record<Colors, string> = {
 }
 
 const BorderColors: Record<Colors, string> = {
+  [Colors.none]: '',
   [Colors.neutral_dark]: 'border-neutral-dark',
   [Colors.neutral_white]: 'border-neutral-white',
   [Colors.neutral_dark_less]: 'border-neutral-dark-less',
@@ -26,6 +29,7 @@ const BorderColors: Record<Colors, string> = {
 }
 
 const BackgroundColors: Record<Colors, string> = {
+  [Colors.none]: '',
   [Colors.neutral_dark]: 'bg-neutral-dark',
   [Colors.neutral_white]: 'bg-neutral-white',
   [Colors.neutral_dark_less]: 'bg-neutral-dark-less',
