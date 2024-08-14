@@ -1,5 +1,5 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types'
+import type { HTMLTag } from 'astro/types'
 import { getTextColor } from '@/utils/colors'
 import type { Color } from '@/types/utils'
 
@@ -23,25 +23,20 @@ type Variant = keyof typeof Variants
 
 export type { Variant as TypographyVariant }
 
-type Props<Tag extends HTMLTag> = Polymorphic<{
-  as: Tag
+interface Props {
+  tag: HTMLTag
   variant: Variant
   color: Color
   class?: string
-}>
+}
 
 const {
-  as: Tag,
+  tag: Tag,
   class: className,
   variant,
   color,
   ...props
-} = Astro.props as {
-  as: HTMLTag
-  variant: Variant
-  color: Color
-  class: String
-}
+} = Astro.props
 
 const classes = [
   strongCss,

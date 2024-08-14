@@ -62,14 +62,14 @@ export type { Variant as BaseTextVariant, Theme as BaseTextTheme }
 
 <div class:list={className}>
   <Typography
-    as={'h2'}
+    tag={headerAs}
     variant={headerVariant}
     color={headerColor}>
     <slot name='header'>No slot header</slot>
   </Typography>
 
   <Typography
-    as={'p'}
+    tag={'p'}
     variant={'body'}
     color={bodyColor}
     class='mt-6'>
