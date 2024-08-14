@@ -11,7 +11,7 @@ const { id = 'web-design' } = Astro.props
 <Separator variant={'normal'} topColor={'neutral_white'} bottomColor={'neutral_dark'}/>
 <BaseContainer
   variant={'hero'}
-  class='space-y-12 bg-neutral-dark'
+  class='bg-neutral-dark pt-20 pb-32'
   id={id}>
   <Typography
     class='text-center'
@@ -21,7 +21,7 @@ const { id = 'web-design' } = Astro.props
     <slot name='header'> No module slot header </slot>
   </Typography>
 
-  <div class='flex justify-center'>
+  <div class='flex justify-center mt-12 mb-20'>
     <LinkButton gradient={'accent_1'}>
       <slot name='cta'> No module slot cta </slot>
     </LinkButton>
