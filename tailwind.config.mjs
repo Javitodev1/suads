@@ -19,7 +19,7 @@ export default {
           'dark-less': '#575757',
           'white-less': '#D7D6FF',
         },
-        'accent': { title: '#38b6ff', cta: '#f9a77b' },
+        'accent': { title: '#38b6ff', cta: '#f9a77b', 'cta-dark': '#d5510a' },
         'gradient': { 'card-dark': '#063A5B', 'card-light': '#D2E2ED' },
         'penn-blue': {
           DEFAULT: '#040237',
