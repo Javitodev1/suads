@@ -24,14 +24,14 @@ const { src, id = 'hero' } = Astro.props
   <div class='relative flex flex-row-reverse py-40'>
     <div class='max-w-2xl'>
       <Typography
-        as={'p'}
+        tag={'p'}
         variant={'spaced'}
         color={'neutral_white'}
         class='mb-3'
         ><slot name='body'>no slot body</slot></Typography
       >
       <Typography
-        as={'p'}
+        tag={'p'}
         variant={'banner'}
         color={'neutral_white'}
         ><slot name='header'>no slot header</slot></Typography

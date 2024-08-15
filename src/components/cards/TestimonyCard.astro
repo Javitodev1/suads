@@ -16,7 +16,7 @@ const { logoSrc } = Astro.props
 
   <div class='mb-16'>
     <Typography
-      as={'h3'}
+      tag={'h3'}
       variant={'body'}
       color={'neutral_dark_less'}
       ><slot name='body' />
@@ -25,14 +25,14 @@ const { logoSrc } = Astro.props
 
   <div>
     <Typography
-      as={'p'}
+      tag={'p'}
       variant={'sidecard_title'}
       color={'neutral_dark'}
       ><slot name='author' />
     </Typography>
 
     <Typography
-      as={'p'}
+      tag={'p'}
       variant={'body'}
       color={'neutral_dark'}
       ><slot name='role' />

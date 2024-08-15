@@ -14,10 +14,7 @@ const { gradient, href, target, class: className } = Astro.props
 const classes = [className, getShadow('card')]
 ---
 
-<Typography
-  as='a'
-  variant={'cta'}
-  color={'neutral_dark'}
+<a
   href={href}
   target={target}
   class:list={classes}
@@ -26,7 +23,12 @@ const classes = [className, getShadow('card')]
     variant={'button'}
     gradient={gradient}
     class='hover:text-white hover:from-picton-blue hover:to-picton-blue-400 transition-colors duration-150 px-8 py-2'>
-    <slot>Solicita tu cotización</slot>
+    <Typography
+      tag='span'
+      variant={'cta'}
+      color={'neutral_dark'}>
+      <slot>Solicita tu cotización</slot>
+    </Typography>
     <ArrowIcon size={24} />
   </GradientContainer>
-</Typography>
+</a>

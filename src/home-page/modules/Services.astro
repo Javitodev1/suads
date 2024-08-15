@@ -13,21 +13,21 @@ const { id = 'services' } = Astro.props
   id={id}>
   <div class='text-center py-14'>
     <Typography
-      as={'p'}
+      tag={'p'}
       variant={'spaced'}
       color={'neutral_dark_less'}
       ><slot name='before-header' /></Typography
     >
 
     <Typography
-      as={'h2'}
+      tag={'h2'}
       variant={'title'}
       color={'neutral_dark'}
       ><slot name='header' /></Typography
     >
 
     <Typography
-      as={'p'}
+      tag={'p'}
       variant={'sidecard_title'}
       color={'neutral_dark'}
       class='mt-8'

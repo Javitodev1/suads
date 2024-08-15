@@ -13,7 +13,7 @@ const { id='sales-method' } = Astro.props
   variant={'section'}
   class='space-y-12'>
   <Typography
-    as={'h2'}
+    tag={'h2'}
     variant={'title'}
     color={'neutral_dark'}>
     <slot name='header'>No module slot header</slot>
@@ -29,7 +29,7 @@ const { id='sales-method' } = Astro.props
       ><slot name='cta'>No module slot cta</slot></LinkButton
     >
     <Typography
-      as={'p'}
+      tag={'p'}
       variant={'sidecard_title'}
       color={'neutral_dark'}>
       <slot name='body'>No module slot body</slot>
