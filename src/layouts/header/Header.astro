@@ -1,0 +1,36 @@
+---
+import { Logo } from '@/assets'
+import { Hamburger } from '@/components'
+import { HOME_ANCHORS, PAGES } from '@/data/links'
+import * as modules from './modules'
+---
+
+<modules.HeaderContainer>
+  <modules.MenuContainer>
+    <Fragment slot={'logo'}> <Logo /> </Fragment>
+    <Fragment slot={'hamburger'}> <Hamburger id={'hc-hamburger'} /> </Fragment>
+  </modules.MenuContainer>
+
+  <modules.ResponsiveContainer id={'hc-responsive-container'}>
+    <modules.Navbar>
+      <modules.NavLink href={PAGES.index}>Inicio</modules.NavLink>
+      <modules.NavLink href={HOME_ANCHORS.services}>Servicios</modules.NavLink>
+      <modules.NavLink href={PAGES.contact}>Contactanos</modules.NavLink>
+    </modules.Navbar>
+
+    <modules.MediaContainer>
+      <modules.MediaItem>Insta</modules.MediaItem>
+      <modules.MediaItem>In</modules.MediaItem>
+      <modules.MediaItem>Wsp</modules.MediaItem>
+    </modules.MediaContainer>
+  </modules.ResponsiveContainer>
+</modules.HeaderContainer>
+
+<script>
+  const hamburger: HTMLInputElement = document.querySelector('#hc-hamburger')!
+  const container: HTMLDivElement = document.querySelector('#hc-responsive-container')!
+
+  hamburger.addEventListener('change', () => {
+    container.classList.toggle('max-h-0')
+  })
+</script>

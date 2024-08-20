@@ -1,0 +1,11 @@
+<header class='fixed top-0 z-10 w-full md:sticky'>
+  <div class='grid p-6 grid-template-rows md:min-h-screen bg-neutral-700'>
+    <slot />
+  </div>
+</header>
+
+<style>
+  .grid-template-rows {
+    grid-template-rows: auto 1fr;
+  }
+</style>
