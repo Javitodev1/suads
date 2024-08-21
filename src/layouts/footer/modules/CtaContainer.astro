@@ -3,7 +3,7 @@ import { LinkButton, Typography } from '@/components'
 ---
 
 <section class='absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2'>
-  <div class='flex gap-12 items-center bg-neutral-dark rounded-full px-12 py-6'>
+  <div class='flex md:flex-row flex-col md:gap-12 gap-4 items-center bg-neutral-dark rounded-3xl md:rounded-full px-6 md:px-12 py-6'>
     <Typography tag={'p'} variant={'subtitle'} color={'neutral_white'} class='text-nowrap'><slot name='header' /></Typography>
     <LinkButton gradient={'accent_1'}><slot name='cta' /></LinkButton>
   </div>
