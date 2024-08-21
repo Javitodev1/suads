@@ -10,14 +10,14 @@ const { id = 'ad-method' } = Astro.props
 
 <Separator
   variant={'normal'}
-  topColor={'neutral_white'}
+  topColor={'neutral_white_secondary'}
   bottomColor={'neutral_dark'}
 />
 
 <BaseContainer
   id={id}
   variant={'section'}
-  class='space-y-12 bg-neutral-dark'>
+  class='bg-neutral-dark py-20'>
   <BaseText
     variant={'section'}
     theme={'light'}
@@ -34,7 +34,7 @@ const { id = 'ad-method' } = Astro.props
     >
   </BaseText>
 
-  <div class='grid grid-cols-3 grid-rows-2 gap-y-[2px]'>
+  <div class='mt-12 mb-20 grid grid-cols-3 grid-rows-2 gap-y-[2px]'>
     <slot name='cards'>no module slot cards</slot>
   </div>
 
