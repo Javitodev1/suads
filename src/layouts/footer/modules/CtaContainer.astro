@@ -1,10 +1,10 @@
+---
+import { LinkButton, Typography } from '@/components'
+---
+
 <section class='absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2'>
-  <div class='flex gap-4 items-center bg-neutral-dark rounded-full px-12 py-4'>
-    <p><slot name="header"/></p>
-    <a
-      href='#'
-      class='bg-accent-cta-dark px-6 py-3 rounded-full text-neutral-white-less font-semibold'
-      ><slot name="cta"/></a
-    >
+  <div class='flex gap-12 items-center bg-neutral-dark rounded-full px-12 py-6'>
+    <Typography tag={'p'} variant={'subtitle'} color={'neutral_white'} class='text-nowrap'><slot name='header' /></Typography>
+    <LinkButton gradient={'accent_1'}><slot name='cta' /></LinkButton>
   </div>
 </section>
