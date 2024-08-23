@@ -8,7 +8,11 @@ interface Props {
   keywords?: string
 }
 
-const { title = 'No Title', description = 'No Description', keywords = 'No Keywords' } = Astro.props
+const {
+  title = 'No Title',
+  description = 'No Description',
+  keywords = 'No Keywords',
+} = Astro.props
 ---
 
 <html lang='es'>
@@ -25,6 +29,36 @@ const { title = 'No Title', description = 'No Description', keywords = 'No Keywo
     <meta
       name='keywords'
       content={keywords}
+    />
+    <meta
+      property='og:title'
+      content={title}
+    />
+    <meta
+      property='og:type'
+      content='website'
+    />
+    <meta
+      property='og:url'
+      content='http://suads.pages.dev'
+    />
+    <meta
+      property='og:image'
+      content='http://suads.pages.dev/favicon.svg'
+    />
+    <meta
+      property='og:description'
+      content={description}
+    />
+    <meta
+      name='theme-color'
+      content='#063A5B'
+    />
+
+    <!-- Include this to make the og:image larger -->
+    <meta
+      name='twitter:card'
+      content='summary_large_image'
     />
     <title>{title}</title>
   </head>
