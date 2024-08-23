@@ -1,5 +1,5 @@
 ---
-import { Typography, LinkButton, BaseContainer, BlendColorText } from '@/components'
+import { Typography, LinkButton, BaseContainer } from '@/components'
 
 interface Props {
   src: string
@@ -8,23 +8,6 @@ interface Props {
 
 const { src, id = 'hero' } = Astro.props
 ---
-
-<!-- <BlendColorText>
-  <Fragment slot={'bg'}>
-    <video
-    autoplay
-    muted
-    loop
-    class='absolute top-0 left-0 object-cover object-center size-full'>
-    <source
-      src={src}
-      type='video/mp4'
-    />
-  </video>
-  </Fragment>
-  <Fragment slot={'header'}>transforma tu <strong>visibilidad online</strong>, atraé clientes ideales a través de redes sociales</Fragment>
-</BlendColorText> -->
-
 
 <BaseContainer variant={'hero'} id={id} class='relative pt-12 md:pt-0'>
 
