@@ -1,12 +1,22 @@
 ---
 import * as module from './modules'
+
+interface Props {
+  enableCta?: boolean
+}
+
+const { enableCta = true } = Astro.props
 ---
 
 <module.FooterContainer>
-  <module.CtaContainer>
-    <Fragment slot={'header'}>Queremos conocerte</Fragment>
-    <Fragment slot={'cta'}>Solicita tu cotización</Fragment>
-  </module.CtaContainer>
+  {
+    enableCta && (
+      <module.CtaContainer>
+        <Fragment slot={'header'}>Queremos conocerte</Fragment>
+        <Fragment slot={'cta'}>Solicita tu cotización</Fragment>
+      </module.CtaContainer>
+    )
+  }
 
   <module.ContentContainer>
     <module.LinkGrid>
