@@ -1,7 +1,9 @@
 ---
 import * as RadixIcon from '@astropub/icons'
+import * as HomeIcon from './home'
 
 enum Variants {
+  // brief icons
   person,
   phone,
   email,
@@ -9,6 +11,15 @@ enum Variants {
   city,
   business,
   website,
+
+  // home icons
+  home_ad,
+  home_business,
+  home_embudo,
+  home_heart,
+  home_people,
+  home_results,
+  home_segment,
 }
 
 type Variant = keyof typeof Variants
@@ -30,3 +41,11 @@ const key = Variants[variant]
 {key === Variants.city && <RadixIcon.DrawingPin class:list={className} />}
 {key === Variants.business && <RadixIcon.Rocket class:list={className} />}
 {key === Variants.website && <RadixIcon.Globe class:list={className} />}
+
+{key === Variants.home_ad && <HomeIcon.Ad />}
+{key === Variants.home_business && <HomeIcon.Business />}
+{key === Variants.home_embudo && <HomeIcon.Embudo />}
+{key === Variants.home_heart && <HomeIcon.Heart />}
+{key === Variants.home_people && <HomeIcon.People />}
+{key === Variants.home_results && <HomeIcon.Results />}
+{key === Variants.home_segment && <HomeIcon.Segment />}

@@ -4,6 +4,7 @@ const HOME_IMAGES = {
   paid_media: '/images/home-page/Home_Paid_Media.png',
   posicionamiento_seo: '/images/home-page/Home_Posicionamiento_SEO.png',
   social_media: '/images/home-page/Home_Social_Media.png',
+  ourmethod: '/images/home-page/Home_Ourmethod.png'
 }
 
 const HOME_VIDEOS = {
