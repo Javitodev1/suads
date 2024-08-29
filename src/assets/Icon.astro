@@ -1,0 +1,32 @@
+---
+import * as RadixIcon from '@astropub/icons'
+
+enum Variants {
+  person,
+  phone,
+  email,
+  country,
+  city,
+  business,
+  website,
+}
+
+type Variant = keyof typeof Variants
+
+interface Props {
+  variant: Variant
+  class?: string
+}
+
+const { variant, class: className } = Astro.props
+
+const key = Variants[variant]
+---
+
+{key === Variants.person && <RadixIcon.Person class:list={className} />}
+{key === Variants.phone && <RadixIcon.ChatBubble class:list={className} />}
+{key === Variants.email && <RadixIcon.EnvelopeOpen class:list={className} />}
+{key === Variants.country && <RadixIcon.SewingPin class:list={className} />}
+{key === Variants.city && <RadixIcon.DrawingPin class:list={className} />}
+{key === Variants.business && <RadixIcon.Rocket class:list={className} />}
+{key === Variants.website && <RadixIcon.Globe class:list={className} />}
