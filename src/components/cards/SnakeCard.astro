@@ -1,0 +1,49 @@
+---
+import { Typography } from '@/components'
+
+const Variants = {
+  left: { container: 'flex-row', semicircle: '' },
+  right: { container: 'flex-row-reverse pl-72', semicircle: 'rotate-180' },
+}
+
+type Variant = keyof typeof Variants
+
+interface Props {
+  variant: Variant
+}
+
+const { variant } = Astro.props
+
+const { container, semicircle } = Variants[variant]
+---
+
+<div
+  class='flex items-center w-fit'
+  class:list={container}>
+  <div
+    class='flex items-center px-6 py-3 text-center border-4 rounded-full h-fit border-picton-blue-200 bg-picton-blue-100 max-w-60'>
+    <Typography
+      tag={'p'}
+      variant={'sidecard_title'}
+      color={'neutral_white'}
+      ><slot name='header' /></Typography
+    >
+  </div>
+
+  <div class='bg-white min-w-12 min-h-1'></div>
+
+  <div class='relative'>
+    <div
+      class='flex items-center justify-center my-3 border-2 rounded-full text-neutral-white-less p-7 size-24 bg-picton-blue-100 border-picton-blue-200'>
+      <slot name='icon' />
+    </div>
+
+    <div
+      class='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+      class:list={semicircle}>
+      <div
+        class='rotate-45 border-8 border-white rounded-full size-32 border-l-transparent border-b-transparent'>
+      </div>
+    </div>
+  </div>
+</div>

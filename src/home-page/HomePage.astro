@@ -6,9 +6,10 @@ import {
   BorderText,
   BaseText,
   TestimonyCard,
+  SnakeCard,
 } from '@/components'
 import { AsideLayout } from '@/layouts'
-import { HOME_VIDEOS, HOME_IMAGES } from '@/assets'
+import { Icon, HOME_VIDEOS, HOME_IMAGES } from '@/assets'
 
 const SEO = {
   title: 'Suads | Agencía de Marketing Digital',
@@ -39,24 +40,98 @@ const testimonies = {
     test: '/favicon.svg',
   },
 }
+
+const ourmethod = {
+  bgSrc: HOME_IMAGES.ourmethod,
+}
 ---
 
 <AsideLayout {...SEO}>
-  <Modules.Hero src={hero.src}>
-    <Fragment slot={'body'}>
-      paid media | desarrollo web
-    </Fragment>
+  <Modules.Hero {...hero}>
+    <Fragment slot={'body'}> paid media | desarrollo web </Fragment>
+
     <Fragment slot={'header'}>
       Conectamos tu marca con clientes ideales a través de redes sociales
     </Fragment>
+
     <Fragment slot={'cta'}> ¿Cómo lo hacemos? </Fragment>
   </Modules.Hero>
 
+  <Modules.OurMethod {...ourmethod}>
+    <Fragment slot={'pre-header'}> Nuestro método </Fragment>
+
+    <Fragment slot={'header'}>
+      Esto es lo que podemos <strong>hacer por ti</strong>
+    </Fragment>
+
+    <Fragment slot={'cta'}> Te lo explicamos </Fragment>
+
+    <Fragment slot={'cards'}>
+      <SnakeCard variant={'left'}>
+        <Fragment slot={'header'}>
+          <strong>Analizamos</strong> tu negocio
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_business'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'right'}>
+        <Fragment slot={'header'}>
+          <strong>Perfilamos</strong> tú Cliente ideal
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_people'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'left'}>
+        <Fragment slot={'header'}>
+          Creamos una oferta <strong>irresistible</strong>
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_heart'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'right'}>
+        <Fragment slot={'header'}>
+          <strong>Segmentamos</strong> los publicos
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_segment'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'left'}>
+        <Fragment slot={'header'}>
+          <strong>Creamos un embudo</strong> de ventas
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_embudo'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'right'}>
+        <Fragment slot={'header'}>
+          <strong>Optimizamos</strong> la campaña
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_ad'} /> </Fragment>
+      </SnakeCard>
+
+      <SnakeCard variant={'left'}>
+        <Fragment slot={'header'}>
+          <strong>Desarrollamos</strong> la campaña ganadora
+        </Fragment>
+
+        <Fragment slot={'icon'}> <Icon variant={'home_results'} /> </Fragment>
+      </SnakeCard>
+    </Fragment>
+  </Modules.OurMethod>
+
   <Modules.Services>
     <Fragment slot={'before-header'}>te ayudamos a crecer</Fragment>
+
     <Fragment slot={'header'}
       >¿qué <strong>soluciones</strong> ofrecemos?</Fragment
     >
+
     <Fragment slot={'after-header'}>
       ¡Somos los mejores y queremos que tú también lo seas!
       <br />

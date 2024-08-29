@@ -1,0 +1,62 @@
+---
+import {
+  Typography,
+  GradientContainer,
+  Separator,
+  LinkButton,
+} from '@/components'
+
+interface Props {
+  bgSrc: string
+}
+
+const { bgSrc } = Astro.props
+---
+
+<GradientContainer
+  variant={'section'}
+  gradient={'dark'}
+  class='relative pt-20 pb-40'>
+  <Typography
+    tag={'p'}
+    variant={'spaced'}
+    color={'neutral_white_less'}
+    ><slot name='pre-header' /></Typography
+  >
+  <Typography
+    tag={'p'}
+    variant={'title'}
+    color={'neutral_white'}
+    ><slot name='header' /></Typography
+  >
+
+  <div class='relative z-20 flex justify-center mt-16'>
+    <div class='relative'>
+      <slot name='cards' />
+    </div>
+  </div>
+
+  <div class='relative z-20 flex justify-center pt-20'>
+    <LinkButton gradient={'accent_1'}><slot name='cta' /></LinkButton>
+  </div>
+
+  <div class='absolute bottom-0 left-0 z-10 w-full'>
+    <Separator
+      variant={'normal'}
+      topColor={'transparent'}
+      bottomColor={'neutral_white'}
+    />
+  </div>
+
+  <div class="absolute left-0 w-full -bottom-40 h-3/4">
+    <picture>
+      <img src={bgSrc} alt="our-method-background" class="object-cover object-center w-full h-auto opacity-20 bg-mask">
+    </picture>
+  </div>
+</GradientContainer>
+
+<style>
+  .bg-mask {
+    mask-image: linear-gradient(transparent 20%, black);
+  }
+</style>
