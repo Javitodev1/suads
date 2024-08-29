@@ -1,0 +1,26 @@
+---
+import { AsideLayout } from '@/layouts'
+import * as modules from './modules'
+
+const layout = {
+  enableFooterCta: false,
+}
+---
+
+<AsideLayout {...layout}>
+  <modules.Hero />
+  <modules.Contact>
+    <Fragment slot={'pre-header'}> Contacto </Fragment>
+
+    <Fragment slot={'header'}> ¡Quiero más clientes! </Fragment>
+
+    <Fragment slot={'body'}>
+      Deseamos ayudarte a hacer crecer tu negocio.
+
+      <span class='block my-4'></span>
+
+      Como primer paso, llena el siguiente formulario y nos pondremos en
+      contacto para recabar toda la información necesaria.
+    </Fragment>
+  </modules.Contact>
+</AsideLayout>
