@@ -1,0 +1,101 @@
+---
+import { Icon } from '@/assets'
+import * as modules from './modules'
+import {sendemail} from './providers'
+
+
+sendemail(Astro.request)
+---
+
+<modules.BriefContainer>
+  <modules.FieldContainer class='col-span-6'>
+    <modules.BriefInput
+      placeholder='Tu nombre'
+      type='text'
+      name='name'
+      id='name'
+    />
+    <Fragment slot={'icon'}><Icon variant={'person'} class:list={'size-6'}></Fragment>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefInput
+      placeholder='+56 9 1234 5678'
+      type='tel'
+      name='phone'
+      id='phone'
+    />
+    <Fragment slot={'icon'}><Icon variant={'phone'} class:list={'size-6'}></Fragment>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefInput
+      placeholder='Tu correo electrónico'
+      type='email'
+      name='email'
+      id='email'
+    />
+    <Fragment slot={'icon'}><Icon variant={'email'} class:list={'size-6'}></Fragment>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefInput
+      placeholder='Tu empresa'
+      type='text'
+      name='business'
+      id='business'
+    />
+    <Fragment slot={'icon'}><Icon variant={'business'} class:list={'size-6'}></Fragment>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefInput
+      type='text'
+      name='website'
+      id='website'
+      placeholder='Sitio web'
+    />
+    <Fragment slot={'icon'}><Icon variant={'website'} class:list={'size-6'}></Fragment>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefSelect
+      name='service'
+      id='service'>
+      <option value='default'>¿En qué servicio estás interesado?</option>
+      <option value='blank'></option>
+      <option value='default'>Aumentar las ventas de mi e-commerce</option>
+      <option value='default'>Conseguir clientes potenciales para mi empresa (leads)</option>
+      <option value='default'>Administrar mis redes sociales y aumentar mi comunidad</option>
+      <option value='default'>Posicionar mi sitio web en Google</option>
+      <option value='default'>Estrategia de marketing digital 360</option>
+      <option value='default'>Inbound Marketing</option>
+      <option value='default'>Diseño de pagina web</option>
+      <option value='default'>Desarrollo web</option>
+      <option value='default'>Otro</option>
+    </modules.BriefSelect>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-3'>
+    <modules.BriefSelect
+      name='budget'
+      id='budget'>
+      <option value='default'>Presupuesto mensual para pauta</option>
+      <option value='default'>Entre $500 a $1,500 usd</option>
+      <option value='default'>Entre $1,500 a $3,000 usd</option>
+      <option value='default'>Entre $3,000 a $5,000 usd</option>
+      <option value='default'>Más de $5,000 usd</option>
+      <option value='default'>Otro</option>
+    </modules.BriefSelect>
+  </modules.FieldContainer>
+
+  <modules.FieldContainer class='col-span-6'>
+    <modules.BriefTextarea
+      placeholder='¡Cuéntanos más sobre lo que quieres, cuanto más detalles, mejor!'
+      name='brief'
+      id='brief'
+    />
+  </modules.FieldContainer>
+
+  <modules.BriefSubmit value='¡HABLEMOS!'/>
+</modules.BriefContainer>

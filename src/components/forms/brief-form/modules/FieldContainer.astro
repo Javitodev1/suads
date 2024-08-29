@@ -1,0 +1,18 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div
+  class:list={className}
+  class='bg-neutral-200 rounded-xl border-2 border-neutral-300 has-[:focus]:border-accent-title flex gap-3 px-3 items-center shadow-inner shadow-black/5'>
+  <div class="grow">
+    <slot />
+  </div>
+  <div class='text-accent-title'>
+    <slot name='icon' />
+  </div>
+</div>

@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'input'> {}
+---
+
+<input
+  class='placeholder:text-neutral-500 size-full bg-transparent py-3 focus:outline-0'
+  {...Astro.props}
+/>

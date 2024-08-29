@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'input'> {}
+---
+
+<input
+  {...Astro.props}
+  class='col-start-5 col-span-2 p-3 duration-100 hover:cursor-pointer bg-accent-cta hover:bg-accent-title hover:text-white size-full focus:outline-0 rounded-xl shadow-sm shadow-black/20'
+  type='submit'
+/>
