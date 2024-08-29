@@ -1,3 +1,1 @@
-import BriefForm from "./BriefForm.astro";
-
-export {BriefForm}
+export * from './brief-form'
