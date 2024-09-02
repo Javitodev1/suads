@@ -7,6 +7,7 @@ import WebDesign from './WebDesign.astro'
 import Services from './Services.astro'
 import Testimonies from './Testimonies.astro'
 import OurMethod from './OurMethod.astro'
+import Partners from './Partners.astro'
 
 export {
   AdMethod,
@@ -18,4 +19,5 @@ export {
   Services,
   Testimonies,
   OurMethod,
+  Partners,
 }

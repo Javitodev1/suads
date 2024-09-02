@@ -1,5 +1,5 @@
 ---
-import { Logo } from '@/assets'
+import { Logo, Icon } from '@/assets'
 import { Hamburger } from '@/components'
 import { HOME_ANCHORS, PAGES } from '@/data/links'
 import * as modules from './modules'
@@ -19,9 +19,9 @@ import * as modules from './modules'
     </modules.Navbar>
 
     <modules.MediaContainer>
-      <modules.MediaItem>Insta</modules.MediaItem>
-      <modules.MediaItem>In</modules.MediaItem>
-      <modules.MediaItem>Wsp</modules.MediaItem>
+      <modules.MediaItem><Icon variant={'social_facebook'} class='size-10' /></modules.MediaItem>
+      <modules.MediaItem><Icon variant={'social_instagram'} class='size-10' /></modules.MediaItem>
+      <modules.MediaItem><Icon variant={'social_linkedin'} class='size-10' /></modules.MediaItem>
     </modules.MediaContainer>
   </modules.ResponsiveContainer>
 </modules.HeaderContainer>

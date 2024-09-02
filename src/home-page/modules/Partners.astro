@@ -1,0 +1,92 @@
+---
+import {
+  BaseContainer,
+  GradientContainer,
+  HScrollContainer,
+  Typography,
+  LinkButton,
+} from '@/components'
+import lighthouse_img from '@/assets/Icons/partners/Lighthouse.png'
+import amatista_img from '@/assets/Icons/partners/amatista.svg'
+import noemi_img from '@/assets/Icons/partners/noemi-cabana.svg'
+---
+
+<GradientContainer
+  variant={'section'}
+  gradient={'dark'}
+  class='text-center py-12'>
+  <Typography
+    tag={'h2'}
+    variant={'spaced'}
+    color={'neutral_white_less'}>
+    <slot name='pre-header' />
+  </Typography>
+
+  <Typography
+    tag={'h3'}
+    variant={'title'}
+    color={'neutral_white'}>
+    <slot name='header-1' />
+  </Typography>
+
+  <Typography
+    tag={'p'}
+    variant={'body'}
+    color={'neutral_white_less'}
+    class='max-w-md mx-auto'>
+    <slot name='body-1' />
+  </Typography>
+
+  <HScrollContainer class='gap-12 mt-12'>
+    <img
+      src={lighthouse_img.src}
+      alt='logo lighthouse'
+      class='h-12 w-auto'
+      loading='lazy'
+      height='48'
+      width="240"
+    />
+    <img
+      src={amatista_img.src}
+      alt='logo amatista'
+      class='h-12 w-auto'
+      loading='lazy'
+      height='48'
+      width="240"
+    />
+    <img
+      src={noemi_img.src}
+      alt='logo noemi'
+      class='h-12 w-auto'
+      loading='lazy'
+      height='48'
+      width="240"
+    />
+    <span class='text-white text-3xl font-bold text-center text-nowrap'
+      >Silvestre LAB</span
+    >
+  </HScrollContainer>
+</GradientContainer>
+
+<BaseContainer
+  variant={'card'}
+  class='text-center py-12'>
+  <Typography
+    tag={'h3'}
+    variant={'title'}
+    color={'neutral_dark'}>
+    <slot name='header-2' />
+  </Typography>
+
+  <Typography
+    tag={'p'}
+    variant={'body'}
+    color={'neutral_dark_less'}
+    class='mb-12 max-w-md mx-auto'>
+    <slot name='body-2' />
+  </Typography>
+
+  <div class='flex justify-center'>
+    <LinkButton gradient={'accent_1'}><slot name='cta' /></LinkButton>
+  </div>
+</BaseContainer>

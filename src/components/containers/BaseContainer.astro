@@ -1,4 +1,6 @@
 ---
+import { type Color, getBackgroundColor } from '@/utils/colors'
+
 const Variants = {
   hero: 'px-12',
   section: 'px-12 mx-auto max-w-6xl',
@@ -13,11 +15,12 @@ interface Props {
   variant: Variant
   class?: string
   id?: string
+  color?: Color
   children: any
 }
 
-const { variant, class: className, id = null } = Astro.props
-const classes = [Variants[variant]]
+const { variant, color = 'none', class: className, id = null } = Astro.props
+const classes = [Variants[variant], getBackgroundColor(color)]
 ---
 
 <section
