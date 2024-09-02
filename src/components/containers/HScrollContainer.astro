@@ -1,0 +1,27 @@
+---
+interface Props {
+  class?: string
+}
+const { class: className } = Astro.props
+---
+
+<div class="overflow-x-scroll scrollbar-hide">
+  <div
+    class='flex-nowrap flex items-center relative *:absolute h-12 *:left-full [&>*]:animation'
+    class:list={className}>
+    <slot />
+    <slot />
+  </div>
+</div>
+
+<style>
+  .animation {
+    animation: 3s infinite linear infinite-scroll;
+  }
+
+  @keyframes infinite-scroll {
+    to {
+      left: -100%;
+    }
+  }
+</style>

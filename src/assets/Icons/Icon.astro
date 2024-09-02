@@ -1,6 +1,7 @@
 ---
 import * as RadixIcon from '@astropub/icons'
 import * as HomeIcon from './home'
+import * as SocialIcon from './socials'
 
 enum Variants {
   // brief icons
@@ -20,6 +21,11 @@ enum Variants {
   home_people,
   home_results,
   home_segment,
+
+  // social icons
+  social_instagram,
+  social_facebook,
+  social_linkedin,
 }
 
 type Variant = keyof typeof Variants
@@ -42,10 +48,14 @@ const key = Variants[variant]
 {key === Variants.business && <RadixIcon.Rocket class:list={className} />}
 {key === Variants.website && <RadixIcon.Globe class:list={className} />}
 
-{key === Variants.home_ad && <HomeIcon.Ad />}
-{key === Variants.home_business && <HomeIcon.Business />}
-{key === Variants.home_embudo && <HomeIcon.Embudo />}
-{key === Variants.home_heart && <HomeIcon.Heart />}
-{key === Variants.home_people && <HomeIcon.People />}
-{key === Variants.home_results && <HomeIcon.Results />}
-{key === Variants.home_segment && <HomeIcon.Segment />}
+{key === Variants.home_ad && <HomeIcon.Ad class:list={className} />}
+{key === Variants.home_business && <HomeIcon.Business class:list={className} />}
+{key === Variants.home_embudo && <HomeIcon.Embudo class:list={className} />}
+{key === Variants.home_heart && <HomeIcon.Heart class:list={className} />}
+{key === Variants.home_people && <HomeIcon.People class:list={className} />}
+{key === Variants.home_results && <HomeIcon.Results class:list={className} />}
+{key === Variants.home_segment && <HomeIcon.Segment class:list={className} />}
+
+{key === Variants.social_instagram && <SocialIcon.InstagramSolid class:list={className} />}
+{key === Variants.social_facebook && <SocialIcon.FacebookSolid class:list={className} />}
+{key === Variants.social_linkedin && <SocialIcon.LinkedinSolid class:list={className} />}
