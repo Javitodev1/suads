@@ -5,21 +5,44 @@ interface Props {
 const { class: className } = Astro.props
 ---
 
-<div class="overflow-x-scroll scrollbar-hide">
+<div class:list={className}>
   <div
-    class='flex-nowrap flex items-center relative *:absolute h-12 *:left-full [&>*]:animation'
-    class:list={className}>
-    <slot />
-    <slot />
+    class='h-full w-fit mx-auto relative overflow-hidden blur-mask'>
+    <div class='flex h-full translate-x-full animation-1 [&>*]:mx-6'>
+      <slot />
+    </div>
+
+    <div class='flex h-full absolute top-0 left-full animation-2 [&>*]:mx-6'>
+      <slot />
+    </div>
   </div>
 </div>
 
 <style>
-  .animation {
-    animation: 3s infinite linear infinite-scroll;
+  :root {
+    --animation-duration: 30s;
   }
 
-  @keyframes infinite-scroll {
+  .blur-mask {
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+
+  .animation-1 {
+    animation: var(--animation-duration) infinite linear move-left;
+  }
+
+  .animation-2 {
+    animation: var(--animation-duration) infinite linear slide-left;
+    animation-delay: calc( -1 * var(--animation-duration) / 2);
+  }
+
+  @keyframes move-left {
+    to {
+      translate: -200%;
+    }
+  }
+
+  @keyframes slide-left {
     to {
       left: -100%;
     }
