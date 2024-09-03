@@ -1,0 +1,29 @@
+---
+import { MeshGradientContainer, Typography, LinkButton } from '@/components'
+---
+
+<MeshGradientContainer class=''>
+  <div class='max-w-6xl mx-auto px-12'>
+    <div class='max-w-xl py-24'>
+      <Typography
+        tag={'p'}
+        variant={'spaced'}
+        color={'neutral_dark'}
+        class='mb-3'
+        ><slot name='body'>no slot body</slot></Typography
+      >
+      <Typography
+        tag={'h1'}
+        variant={'banner'}
+        color={'neutral_dark'}
+        ><slot name='header'>no slot header</slot></Typography
+      >
+
+      <LinkButton
+        gradient={'accent_1'}
+        class='mt-14'>
+        <slot name='cta'> No module slot hero-cta </slot>
+      </LinkButton>
+    </div>
+  </div>
+</MeshGradientContainer>

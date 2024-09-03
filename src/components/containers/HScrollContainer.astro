@@ -8,11 +8,11 @@ const { class: className } = Astro.props
 <div class:list={className}>
   <div
     class='h-full w-fit mx-auto relative overflow-hidden blur-mask'>
-    <div class='flex h-full translate-x-full animation-1 [&>*]:mx-6'>
+    <div class='flex items-center h-full translate-x-full animation-1 [&>*]:mx-6'>
       <slot />
     </div>
 
-    <div class='flex h-full absolute top-0 left-full animation-2 [&>*]:mx-6'>
+    <div class='flex items-center h-full absolute top-0 left-full animation-2 [&>*]:mx-6'>
       <slot />
     </div>
   </div>
@@ -21,6 +21,7 @@ const { class: className } = Astro.props
 <style>
   :root {
     --animation-duration: 30s;
+    --half-duration: -15s;
   }
 
   .blur-mask {
@@ -33,7 +34,7 @@ const { class: className } = Astro.props
 
   .animation-2 {
     animation: var(--animation-duration) infinite linear slide-left;
-    animation-delay: calc( -1 * var(--animation-duration) / 2);
+    animation-delay: var(--half-duration);
   }
 
   @keyframes move-left {

@@ -8,6 +8,7 @@ import Services from './Services.astro'
 import Testimonies from './Testimonies.astro'
 import OurMethod from './OurMethod.astro'
 import Partners from './Partners.astro'
+import RainbowHero from './RainbowHero.astro'
 
 export {
   AdMethod,
@@ -20,4 +21,5 @@ export {
   Testimonies,
   OurMethod,
   Partners,
+  RainbowHero,
 }

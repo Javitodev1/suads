@@ -1,5 +1,5 @@
 ---
-import { MeshGradientContainer, Typography, LinkButton, BaseContainer } from '@/components'
+import { Typography, LinkButton, BaseContainer } from '@/components'
 
 interface Props {
   src: string
@@ -8,8 +8,6 @@ interface Props {
 
 const { src, id = 'hero' } = Astro.props
 ---
-
-<MeshGradientContainer class='h-screen w-full' />
 
 <BaseContainer variant={'hero'} id={id} class='relative pt-12 md:pt-0'>
 
