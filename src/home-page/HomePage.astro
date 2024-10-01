@@ -1,10 +1,6 @@
 ---
 import * as Modules from './modules'
-import {
-  ServiceCard,
-  TestimonyCard,
-  SnakeCard,
-} from '@/components'
+import { ServiceCard, TestimonyCard, SnakeCard } from '@/components'
 import { AsideLayout } from '@/layouts'
 import { Icon, HOME_VIDEOS, HOME_IMAGES } from '@/assets'
 
@@ -48,7 +44,9 @@ const ourmethod = {
     <Fragment slot={'body'}> paid media | desarrollo web </Fragment>
 
     <Fragment slot={'header'}>
-      <strong>Conectamos</strong> tu marca con clientes ideales a través de <strong>redes sociales</strong>
+      <strong>Conectamos</strong> tu marca con clientes ideales a través de <strong
+        >redes sociales</strong
+      >
     </Fragment>
 
     <Fragment slot={'cta'}> ¿Cómo lo hacemos? </Fragment>
@@ -166,14 +164,35 @@ const ourmethod = {
     </Fragment>
   </Modules.Services>
 
+  <Modules.WhoWeAre>
+    <Fragment slot={'pre-header'}>Quienes Somos</Fragment>
+
+    <Fragment slot={'header'}
+      >El arte de crear conexiones entre tu y tus clientes
+    </Fragment>
+
+    <Fragment slot={'body'}
+      >Somos tus compañeros de aventura en el fascinante viaje de conseguir
+      clientes ideales. Aquí no eres simplemente "un cliente más". Nos
+      sumergimos de lleno en tu proyecto.
+    </Fragment>
+
+    <Fragment slot={'cta'}>¿Quieres conseguir más clientes?</Fragment>
+  </Modules.WhoWeAre>
+
   <Modules.Partners>
     <Fragment slot={'pre-header'}>Nuestros clientes</Fragment>
 
-    <Fragment slot={'header-1'}>¡Súmate a las marcas que <strong>consiguen clientes</strong> con Suads!</Fragment>
+    <Fragment slot={'header-1'}
+      >¡Súmate a las marcas que <strong>consiguen clientes</strong> con Suads!</Fragment
+    >
     <Fragment slot={'body-1'}></Fragment>
 
     <Fragment slot={'header-2'}>Queremos trabajar contigo</Fragment>
-    <Fragment slot={'body-2'}>Y si tú también quieres conseguir clientes con nosotros empecemos mejor por una primera cita</Fragment>
+    <Fragment slot={'body-2'}
+      >Y si tú también quieres conseguir clientes con nosotros empecemos mejor
+      por una primera cita</Fragment
+    >
 
     <Fragment slot={'cta'}>Hablemos del futuro de tu negocio</Fragment>
   </Modules.Partners>

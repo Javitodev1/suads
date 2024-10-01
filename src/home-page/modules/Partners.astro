@@ -2,7 +2,8 @@
 import {
   BaseContainer,
   GradientContainer,
-  HScrollContainer,
+  HAutoScroll,
+  HAutoScrollItem,
   Typography,
   LinkButton,
 } from '@/components'
@@ -37,35 +38,47 @@ import noemi_img from '@/assets/Icons/partners/noemi-cabana.svg'
     <slot name='body-1' />
   </Typography>
 
-  <HScrollContainer class='h-12 mt-12'>
-    <img
-      src={lighthouse_img.src}
-      alt='logo lighthouse'
-      class='h-full w-auto'
-      loading='lazy'
-      height='48'
-      width='240'
-    />
-    <img
-      src={amatista_img.src}
-      alt='logo amatista'
-      class='h-full w-auto'
-      loading='lazy'
-      height='48'
-      width='240'
-    />
-    <img
-      src={noemi_img.src}
-      alt='logo noemi'
-      class='h-full w-auto'
-      loading='lazy'
-      height='48'
-      width='240'
-    />
-    <span class='text-white text-3xl font-bold text-center text-nowrap'
-      >Silvestre LAB</span
-    >
-  </HScrollContainer>
+  <HAutoScroll class='mt-12'>
+    <HAutoScrollItem>
+      <img
+        src={lighthouse_img.src}
+        alt='logo lighthouse'
+        class='h-full w-fit'
+        loading='lazy'
+        height='218'
+        width='1151'
+      />
+    </HAutoScrollItem>
+
+    <HAutoScrollItem>
+      <img
+        src={amatista_img.src}
+        alt='logo amatista'
+        class='h-full w-fit'
+        loading='lazy'
+        height='48'
+        width='240'
+      />
+    </HAutoScrollItem>
+
+    <HAutoScrollItem>
+      <img
+        src={noemi_img.src}
+        alt='logo noemi'
+        class='h-full w-fit'
+        loading='lazy'
+        height='48'
+        width='240'
+      />
+    </HAutoScrollItem>
+
+    <HAutoScrollItem>
+      <span
+        class='text-white text-3xl font-bold text-center text-nowrap h-full flex items-center'
+        >Silvestre LAB</span
+      >
+    </HAutoScrollItem>
+  </HAutoScroll>
 </GradientContainer>
 
 <BaseContainer

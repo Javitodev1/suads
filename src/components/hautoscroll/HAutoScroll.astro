@@ -1,0 +1,70 @@
+---
+interface Props {
+  children: any
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div
+  class='min-h-12 w-full mx-auto overflow-hidden blur-mask'
+  class:list={className}>
+  <div
+    class='h-full relative mx-auto'
+    id='autoscroll'>
+    <slot />
+  </div>
+</div>
+
+<script>
+  const container: HTMLDivElement = document.querySelector('#autoscroll')!
+  const children = Array.from(container.children) as Array<HTMLDivElement> ?? []
+
+  const speedInPixelsBySeconds = 40
+
+  const maxWidth = children.reduce(
+    (acc, item) => Math.max(item.clientWidth, acc),
+    -Infinity
+  )
+
+  const containerWidth = children.reduce(
+    (acc, item) => acc + item.clientWidth,
+    0
+  )
+
+  const animationDurationInMiliseconds =
+    (containerWidth / speedInPixelsBySeconds) * 1000
+  const xEndInPixels = -maxWidth
+
+  const childrenDelay = children.map(
+    (_, i) =>
+      -1 * Math.round((animationDurationInMiliseconds / children.length) * i)
+  )
+
+  children.forEach(
+    (item, index) => (item.style.animationDelay = `${childrenDelay[index]}ms`)
+  )
+
+  const style = document.documentElement.style
+
+  style.setProperty(
+    '--scroll-item-duration',
+    `${animationDurationInMiliseconds}ms`
+  )
+  style.setProperty('--scroll-item-end', `${xEndInPixels}px`)
+
+  container.style.width = `${containerWidth}px`
+</script>
+
+<style>
+  .blur-mask {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+</style>

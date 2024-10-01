@@ -1,0 +1,35 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div
+  class='h-full absolute left-full top-0 animation'
+  class:list={className}>
+  <div class='h-12 w-[240px] flex items-center'>
+    <slot />
+  </div>
+</div>
+
+<style>
+  :root {
+    --scroll-item-duration: 0;
+    --scroll-item-end: 0;
+  }
+
+  .animation {
+    animation-name: slide-left;
+    animation-timing-function: linear;
+    animation-duration: var(--scroll-item-duration);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes slide-left {
+    to {
+      left: var(--scroll-item-end);
+    }
+  }
+</style>

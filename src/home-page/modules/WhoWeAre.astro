@@ -1,0 +1,41 @@
+---
+import { BaseContainer, Typography, LinkButton, Globe } from '@/components'
+---
+
+<BaseContainer
+  class='relative overflow-hidden'
+  variant={'section'}
+  color={'neutral_dark'}>
+  <div class='py-40 max-w-prose'>
+    <Typography
+      tag={'p'}
+      variant={'spaced'}
+      color={'neutral_white_less'}
+      ><slot name='pre-header' /></Typography
+    >
+
+    <Typography
+      class='mb-8'
+      tag={'h2'}
+      variant={'title'}
+      color={'neutral_white'}>
+      <slot name='header' />
+    </Typography>
+
+    <Typography
+      class='mb-14'
+      tag={'p'}
+      variant={'body'}
+      color={'neutral_white_less'}>
+      <slot name='body' />
+    </Typography>
+
+    <LinkButton gradient={'accent_1'}>
+      <slot name="cta"/>
+    </LinkButton>
+  </div>
+
+  <div class="absolute -top-40 right-0">
+    <Globe />
+  </div>
+</BaseContainer>

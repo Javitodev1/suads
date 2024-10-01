@@ -20,11 +20,12 @@ interface Props {
 }
 
 const { variant, color = 'none', class: className, id = null } = Astro.props
-const classes = [Variants[variant], getBackgroundColor(color)]
+const classes = [Variants[variant]]
+const container = [className, getBackgroundColor(color)]
 ---
 
 <section
-  class:list={className}
+  class:list={container}
   id={id}>
   <div class:list={classes}>
     <slot />
